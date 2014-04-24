@@ -1,0 +1,19 @@
+html(lang="en")
+  head
+    title
+      | Stuff
+  body(ng-app="app", ng-controller="appController")
+
+    div#container
+      div#row
+      div#col-md-3
+        ul#nav
+          li 1
+          li {{title}}
+      div#col-md-9
+        div(ng-view)
+
+link(rel="stylesheet", href="css/bootstrap.css")
+script(src="js/angular.js")
+script(src="js/angular-route.js")
+script(src="js/app.js")
