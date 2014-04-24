@@ -3,5 +3,5 @@ app = angular.module('app', [
 ])
 
 app.controller('appController', ['$scope', ($scope) ->
-  $scope.app = "bar"
+  $scope.title = "Hi Katie"
 ])

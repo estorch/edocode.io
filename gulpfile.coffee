@@ -8,7 +8,7 @@ coffee = require 'gulp-coffee'
 filePath =
   jade: { src: './app/index.jade', dest: './_public' }
   coffee: { src: './app/**/*.controller.coffee', dest: './_public/js' }
-  js: { src: './node_modules/**/angular.min.js', dest: './_public/js' }
+  js: { src: './bower_components/angular/angular.js', dest: './_public/js' }
 
 # Create HTML from Jade
 gulp.task 'html', () ->
@@ -24,8 +24,6 @@ gulp.task 'coffee', () ->
 
 gulp.task 'js', () ->
   gulp.src filePath.js.src
-    .pipe concat('angular.js')
-    .pipe uglify()
     .pipe gulp.dest filePath.js.dest
 
 # Default tasks
