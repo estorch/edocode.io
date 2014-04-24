@@ -1,5 +1,5 @@
-about = angular.module('aboutController', {})
+examples = angular.module('examples', [ ])
 
-about.controller('aboutController', ($scope) ->
+examples.controller('examplesController', ($scope) ->
   $scope.about = "About controller data"
 )

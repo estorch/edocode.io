@@ -1,5 +1,5 @@
-about = angular.module('aboutController', {})
+resume = angular.module('resume', [ ])
 
-about.controller('aboutController', ($scope) ->
-  $scope.about = "About controller data"
+resume.controller('resumeController', ($scope) ->
+  $scope.about = "Resume controller data"
 )
