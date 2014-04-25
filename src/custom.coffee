@@ -1,39 +1,6 @@
-
-
-$('#about').hover(function() {
-  $(this).attr('src', '/folder/about.jpg');
-}, function() {
-  $(this).attr('src', '/folder/about-active.jpg');
-});
-
-$('#about').hover(function() {
-    $(this).attr('src', '/folder/about.jpg');
-}, function() {
-    $(this).attr('src', '/folder/about-active.jpg');
-});
-
-$('#about').hover(function() {
-    $(this).attr('src', '/folder/about.jpg');
-}, function() {
-    $(this).attr('src', '/folder/about-active.jpg');
-});
-
-$('#about').hover(function() {
-    $(this).attr('src', '/folder/about.jpg');
-}, function() {
-    $(this).attr('src', '/folder/about-active.jpg');
-});
-
-$('#about').hover(function() {
-    $(this).attr('src', '/folder/about.jpg');
-}, function() {
-    $(this).attr('src', '/folder/about-active.jpg');
-});
-
-$('#about').hover(function() {
-    $(this).attr('src', '/folder/about.jpg');
-}, function() {
-    $(this).attr('src', '/folder/about-active.jpg');
-});
-
-
+$(".menu-item").hover ( () ->
+  id = this.id
+  $(this).attr "src", "images/#{id}-active.jpg"
+), () ->
+  id = this.id
+  $(this).attr "src", "images/#{id}.jpg"

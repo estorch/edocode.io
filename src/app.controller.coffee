@@ -14,7 +14,7 @@ app.config(['$routeProvider', ($routeProvider) ->
       templateUrl: 'examples/examples.html'
       controller: 'examplesController'
     }).when('/resume', {
-      templateUrl: 'examples/resume.html'
+      templateUrl: 'resume/resume.html'
       controller: 'resumeController'
     }).when('/contact', {
       templateUrl: 'contact/contact.html'

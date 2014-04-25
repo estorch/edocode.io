@@ -3,17 +3,31 @@ html(lang="en")
     title
       | Stuff
   body(ng-app="app", ng-controller="appController")
-
-    div#container
-      div#row
-      div#col-md-3
-        ul#nav
-          li 1
-          li {{title}}
-      div#col-md-9
-        div(ng-view)
+    div.container-non-responsive
+      div(class="header ohc-header")
+        a(href="#")
+          img(src="images/logo.jpg")
+        div.pull-right
+          a(ng-href="#/about")
+            img(src="images/about.jpg", id="about", class="menu-item")
+          a(href="#/examples")
+            img(src="images/examples.jpg", id="examples", class="menu-item")
+          a(href="#/resume")
+            img(src="images/resume.jpg", id="resume", class="menu-item")
+          a(href="#/contact")
+            img(src="images/contact.jpg", id="contact", class="menu-item")
+          a(href="https://www.linkedin.com/pub/eric-storch/5a/5ba/654", target="_blank")
+            img(src="images/linkedin.jpg", id="linkedin", class="menu-item")
+          a(href="https://github.com/himalstorch/onehitcombo", target="_blank")
+            img(src="images/github.jpg", id="github", class="menu-item")
+      div.row
+        div.col-xs-12
+          div(ng-view)
 
 link(rel="stylesheet", href="css/bootstrap.css")
+link(rel="stylesheet", href="css/custom.css")
 script(src="js/angular.js")
 script(src="js/angular-route.js")
+script(src="js/jquery.js")
 script(src="js/app.js")
+script(src="js/custom.js")
