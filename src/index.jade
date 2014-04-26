@@ -1,4 +1,6 @@
 html(lang="en")
+  meta(charset="utf-8")
+  meta(http-equiv="X-UA-Compatible", content="IE=edge")
   head
     title
       | Stuff
@@ -14,15 +16,22 @@ html(lang="en")
             img(src="images/examples.jpg", id="examples", class="menu-item")
           a(href="#/resume")
             img(src="images/resume.jpg", id="resume", class="menu-item")
-          a(href="#/contact")
-            img(src="images/contact.jpg", id="contact", class="menu-item")
           a(href="https://www.linkedin.com/pub/eric-storch/5a/5ba/654", target="_blank")
             img(src="images/linkedin.jpg", id="linkedin", class="menu-item")
           a(href="https://github.com/himalstorch/onehitcombo", target="_blank")
             img(src="images/github.jpg", id="github", class="menu-item")
+          a(href="#/contact")
+            img(src="images/contact.jpg", id="contact", class="menu-item")
       div.row
         div.col-xs-12
           div(ng-view)
+      div.row
+        div.footer
+          p.page-footer
+            | © 2014 Eric Storch<br>
+            | Created with AngularJS / Bootstrap
+
+
 
 link(rel="stylesheet", href="css/bootstrap.css")
 link(rel="stylesheet", href="css/custom.css")
