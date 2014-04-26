@@ -1,4 +1,33 @@
-div.container
+div.subcontainer-non-responsive
   div.row
-    div.col-md-12
-      h3 {{title}}
+    div.col-xs-12
+      h3.page-title.center
+        | Contact<br><br>
+  div.row
+    div.col-xs-4
+      h3.page-title
+        | Eric Storch<br>
+      h3.page-title.page-title-sub
+        | 15600 NE 8th Street<br>
+        | Suite B1-981<br>
+        | Bellevue, WA 98008<br>
+        | (702) 875-3312<br>
+        | eric@onehitcombo.com
+    div.col-xs-8
+      div.row
+        div.form-group
+          label.col-xs-2.email(for="name") Name:
+          div.col-xs-6
+            input.form-control.email-input(type="text", placeholder="Name", name="name", id="name")
+          div.col-xs-4
+      div.row
+        div.form-group
+          label.col-xs-2.email(for="email") E-mail:
+          div.col-xs-6
+            input.form-control.email-input(type="text", placeholder="E-mail", name="email", id="email")
+          div.col-xs-4
+      div.row
+        div.form-group
+          label.col-xs-2.email(for="message") Message:
+          div.col-xs-10
+            textarea.form-control.email-input(rows="5", placeholder="Your Message", name="message", id="message")

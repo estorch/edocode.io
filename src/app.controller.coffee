@@ -4,6 +4,8 @@ app = angular.module('app', [
   'contact'
   'examples'
   'resume'
+  'linkedin'
+  'github'
 ])
 
 app.config(['$routeProvider', ($routeProvider) ->
@@ -16,6 +18,12 @@ app.config(['$routeProvider', ($routeProvider) ->
     }).when('/resume', {
       templateUrl: 'resume/resume.html'
       controller: 'resumeController'
+    }).when('/linkedin', {
+      templateUrl: 'linkedin/linkedin.html'
+      controller: 'linkedinController'
+    }).when('/github', {
+      templateUrl: 'github/github.html'
+      controller: 'githubController'
     }).when('/contact', {
       templateUrl: 'contact/contact.html'
       controller: 'contactController'
