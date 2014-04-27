@@ -16,7 +16,7 @@ filePath =
   templates: { src: [ './src/**/*.jade', '!./src/index.jade' ], dest: './_public' }
   bootstrap: { src: './bower_components/bootstrap/less/bootstrap.less', dest: './_public/css' }
   less: { src: './src/custom.less', dest: './_public/css' }
-  assets: { src: './assets/*.*', dest: './_public/images' }
+  assets: { src: './assets/*.*', dest: './_public/assets' }
   coffee: { src: './src/**/*.controller.coffee', dest: './_public/js' }
   angular: { src: './bower_components/angular/angular.js', dest: './_public/js' }
   angular_route: { src: './bower_components/angular-route/angular-route.js', dest: './_public/js' }

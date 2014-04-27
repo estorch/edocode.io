@@ -1,6 +1,6 @@
 html(lang="en")
   head
-    title OneHitCombo.com
+    title edocode.io - when turtles fly
     meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
     meta(http-equiv='Content-Style-Type', content='text/css')
     meta(name='copyright', content='© Eric Storch')
@@ -9,34 +9,26 @@ html(lang="en")
     meta(name='description', content='Portfolio & Web-Service Demonstration Platform')
     meta(name='keyword', content='Eric Storch, Software Developer, Programmer, Seattle')
   body(ng-app="app", ng-controller="appController")
-    div.container-non-responsive
-      div(class="header ohc-header")
-        a(href="#")
-          img(src="images/logo.jpg")
-        div.pull-right
-          a(ng-href="#/about")
-            img(src="images/about.jpg", id="about", class="menu-item")
-          a(href="#/examples")
-            img(src="images/examples.jpg", id="examples", class="menu-item")
-          a(href="#/resume")
-            img(src="images/resume.jpg", id="resume", class="menu-item")
-          a(href="#/linkedin")
-            img(src="images/linkedin.jpg", id="linkedin", class="menu-item")
-          a(href="#/github")
-            img(src="images/github.jpg", id="github", class="menu-item")
-          a(href="#/contact")
-            img(src="images/contact.jpg", id="contact", class="menu-item")
-      div.row
-        div.col-xs-12
-          div(ng-view)
-      div.row
-        div.footer
-          p.page-footer
-            | © 2014 Eric Storch<br>
-            | Site Created With&nbsp;
-            a(href="angularjs.org/", target="_blank") AngularJS&nbsp;
-            | /&nbsp;
-            a(href="getbootstrap.com/", target="_blank") Bootstrap
+body
+  div#wrapper
+    div#sidebar-wrapper
+      a(ng-href="#/about")
+        img(src="assets/logo.jpg", id="logo")
+      a(href="#/about")
+        img(src="assets/about.jpg", id="about", class="menu-item")
+      a(href="#/web-services")
+        img(src="assets/web-services.jpg", id="web-services", class="menu-item")
+      a(href="#/resume")
+        img(src="assets/resume.jpg", id="resume", class="menu-item")
+      a(href="#/linkedin")
+        img(src="assets/linkedin.jpg", id="linkedin", class="menu-item")
+      a(href="#/gihub")
+        img(src="assets/github.jpg", id="github", class="menu-item")
+      a(href="#/contact")
+        img(src="assets/contact.jpg", id="contact", class="menu-item")
+
+    div#page-content-wrapper
+      div(ng-view)
 
 link(rel="stylesheet", href="css/bootstrap.css")
 link(rel="stylesheet", href="css/custom.css")
