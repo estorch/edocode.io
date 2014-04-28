@@ -1,33 +1,45 @@
-div.subcontainer-non-responsive
+div.content-header
   div.row
     div.col-xs-12
       h3.page-title.center
-        | Contact<br><br>
+        | Contact<br>
+      h3.page-title.page-title-sub.center
+        | Let's Get In Touch!
+div.page-content
   div.row
-    div.col-xs-4
+    div.col-xs-3
       h3.page-title
         | Eric Storch<br>
-      h3.page-title.page-title-sub
         | 15600 NE 8th Street<br>
         | Suite B1-981<br>
         | Bellevue, WA 98008<br>
         | (702) 875-3312<br>
-        | eric@onehitcombo.com
-    div.col-xs-8
+        a(href="mailto:notyet?Subject=Hello%20again", target="_top")
+          | not yet
+    div.col-xs-9
       div.row
+        div.form-group.email-input
+          div.row
+            label.col-xs-2.email(for="name") Name:
+            div.col-xs-6
+              input.form-control.email-input(type="text", placeholder="Name", name="name", id="name")
+            div.col-xs-4
         div.form-group
-          label.col-xs-2.email(for="name") Name:
-          div.col-xs-6
-            input.form-control.email-input(type="text", placeholder="Name", name="name", id="name")
-          div.col-xs-4
-      div.row
+          div.row
+            label.col-xs-2.email(for="email") E-mail:
+            div.col-xs-6
+              input.form-control.email-input(type="text", placeholder="E-mail", name="email", id="email")
+            div.col-xs-4
         div.form-group
-          label.col-xs-2.email(for="email") E-mail:
-          div.col-xs-6
-            input.form-control.email-input(type="text", placeholder="E-mail", name="email", id="email")
-          div.col-xs-4
-      div.row
+          div.row
+            label.col-xs-2.email(for="message") Message:
+            div.col-xs-10
+              textarea.form-control.email-input(rows="8", placeholder="Your Message", name="message", id="message")
         div.form-group
-          label.col-xs-2.email(for="message") Message:
-          div.col-xs-10
-            textarea.form-control.email-input(rows="5", placeholder="Your Message", name="message", id="message")
+          div.row
+            div.col-xs-2
+            div.col-xs-2
+              button send
+            div.col-xs-2
+              button clear
+            div.col-xs-6

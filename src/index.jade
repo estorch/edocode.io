@@ -22,13 +22,21 @@ body
         img(src="assets/resume.jpg", id="resume", class="menu-item")
       a(href="#/linkedin")
         img(src="assets/linkedin.jpg", id="linkedin", class="menu-item")
-      a(href="#/gihub")
+      a(href="#/github")
         img(src="assets/github.jpg", id="github", class="menu-item")
       a(href="#/contact")
         img(src="assets/contact.jpg", id="contact", class="menu-item")
 
     div#page-content-wrapper
       div(ng-view)
+
+      div.footer.center
+        p.page-footer
+          | © 2014 Eric Storch<br>
+          | Site Created With&nbsp;
+          a(href="https://angularjs.org/", target="_blank") AngularJS&nbsp;
+          | /&nbsp;
+          a(href="http://getbootstrap.com/", target="_blank") Bootstrap
 
 link(rel="stylesheet", href="css/bootstrap.css")
 link(rel="stylesheet", href="css/custom.css")

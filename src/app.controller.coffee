@@ -2,7 +2,7 @@ app = angular.module('app', [
   'ngRoute'
   'about'
   'contact'
-  'examples'
+  'web-services'
   'resume'
   'linkedin'
   'github'
@@ -12,9 +12,9 @@ app.config(['$routeProvider', ($routeProvider) ->
   $routeProvider.when('/about', {
       templateUrl: 'about/about.html'
       controller: 'aboutController'
-    }).when('/examples', {
-      templateUrl: 'examples/examples.html'
-      controller: 'examplesController'
+    }).when('/web-services', {
+      templateUrl: 'web-services/web-services.html'
+      controller: 'web-servicesController'
     }).when('/resume', {
       templateUrl: 'resume/resume.html'
       controller: 'resumeController'
