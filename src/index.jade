@@ -10,33 +10,49 @@ html(lang="en")
     meta(name='keyword', content='Eric Storch, Software Developer, Programmer, Seattle')
   body(ng-app="app", ng-controller="appController")
 body
-  div#wrapper
-    div#sidebar-wrapper
-      a(ng-href="#/about")
-        img(src="assets/logo.jpg", id="logo")
-      a(href="#/about")
-        img(src="assets/about.jpg", id="about", class="menu-item")
-      a(href="#/web-services")
-        img(src="assets/web-services.jpg", id="web-services", class="menu-item")
-      a(href="#/resume")
-        img(src="assets/resume.jpg", id="resume", class="menu-item")
-      a(href="#/linkedin")
-        img(src="assets/linkedin.jpg", id="linkedin", class="menu-item")
-      a(href="#/github")
-        img(src="assets/github.jpg", id="github", class="menu-item")
-      a(href="#/contact")
-        img(src="assets/contact.jpg", id="contact", class="menu-item")
-
-    div#page-content-wrapper
+  div#edo-navbar-wrapper
+    div#edo-navbar
+      div#edo-navbar-content
+        div#edo-navbar-logo
+          h3 EdoCode
+        div.edo-navbar-item
+          a(ng-href="#/about")
+            div.edo-navbar-overbar
+            div.edo-navbar-name
+              p About
+        div.edo-navbar-item
+          a(ng-href="#/web-services")
+            div.edo-navbar-overbar
+            div.edo-navbar-name
+              p Web-Services
+        div.edo-navbar-item
+          a(ng-href="#/resume")
+            div.edo-navbar-overbar
+            div.edo-navbar-name
+              p Resume
+        div.edo-navbar-item
+          a(ng-href="#/contact")
+            div.edo-navbar-overbar
+            div.edo-navbar-name
+              p Contact
+        div#edo-navbar-tail
+          div#edo-navbar-tailitems
+            a(href="http://www.linkedin.com/pub/eric-storch/5a/5ba/654/", target="_blank")
+              img(src='assets/linkedin.jpg')
+            a(href="https://github.com/himalstorch/edocode.io", target="_blank")
+              img(src='assets/github.jpg')
+  div#edo-content-wrapper
+    div#edo-content
       div(ng-view)
 
-      div.footer.center
-        p.page-footer
-          | © 2014 Eric Storch<br>
-          | Site Created With&nbsp;
-          a(href="https://angularjs.org/", target="_blank") AngularJS&nbsp;
-          | /&nbsp;
-          a(href="http://getbootstrap.com/", target="_blank") Bootstrap
+  div#edo-footer-wrapper
+    div#edo-footer
+      p.page-footer
+        | © 2014 Eric Storch<br>
+        | Site Created With&nbsp;
+        a(href="https://angularjs.org/", target="_blank") AngularJS&nbsp;
+        | /&nbsp;
+        a(href="http://getbootstrap.com/", target="_blank") Bootstrap
 
 link(rel="stylesheet", href="css/bootstrap.css")
 link(rel="stylesheet", href="css/custom.css")
