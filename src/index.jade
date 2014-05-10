@@ -12,35 +12,34 @@ html(lang="en")
 body
   div#edo-navbar-wrapper
     div#edo-navbar
-      div#edo-navbar-content
-        div#edo-navbar-logo
-          h3 EdoCode
-        div.edo-navbar-item
-          a(ng-href="#/about")
-            div.edo-navbar-overbar
-            div.edo-navbar-name
-              p About
-        div.edo-navbar-item
-          a(ng-href="#/web-services")
-            div.edo-navbar-overbar
-            div.edo-navbar-name
-              p Web-Services
-        div.edo-navbar-item
-          a(ng-href="#/resume")
-            div.edo-navbar-overbar
-            div.edo-navbar-name
-              p Resume
-        div.edo-navbar-item
-          a(ng-href="#/contact")
-            div.edo-navbar-overbar
-            div.edo-navbar-name
-              p Contact
-        div#edo-navbar-tail
-          div#edo-navbar-tailitems
-            a(href="http://www.linkedin.com/pub/eric-storch/5a/5ba/654/", target="_blank")
-              img(src='assets/linkedin.jpg')
-            a(href="https://github.com/himalstorch/edocode.io", target="_blank")
-              img(src='assets/github.jpg')
+      div#edo-navbar-logo
+        a(ng-href="#/about")
+          img(src="assets/logo.jpg")
+      div.edo-navbar-item#about
+        a(ng-href="#/about")
+          div.edo-navbar-overbar#about-bar
+          div.edo-navbar-name
+            p About
+      div.edo-navbar-item#web-services
+        a(ng-href="#/web-services")
+          div.edo-navbar-overbar#web-services-bar
+          div.edo-navbar-name
+            p Web-Services
+      div.edo-navbar-item#resume
+        a(ng-href="#/resume")
+          div.edo-navbar-overbar#resume-bar
+          div.edo-navbar-name
+            p Résumé
+      div.edo-navbar-item#contact
+        a(ng-href="#/contact")
+          div.edo-navbar-overbar#contact-bar
+          div.edo-navbar-name
+            p Contact
+      div#edo-navbar-tail
+        a(href="http://www.linkedin.com/pub/eric-storch/5a/5ba/654/", target="_blank")
+          img.tail-img#linkedin(src='assets/linkedin.jpg')
+        a(href="https://github.com/himalstorch/edocode.io", target="_blank")
+          img.tail-img#github(src='assets/github.jpg')
   div#edo-content-wrapper
     div#edo-content
       div(ng-view)

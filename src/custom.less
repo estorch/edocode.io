@@ -3,6 +3,18 @@ body {
   overflow: scroll;
 }
 
+h3, h1, p {
+  font-family: KozGoPro-ExtraLight;
+  font-size: 24px;
+  color: #1c1c1c;
+  margin: 0px;
+  margin: 0
+}
+
+a:hover{
+  text-decoration: none;
+}
+
 #edo-navbar-wrapper {
   background-color: #1c1c1c;
   width: 100%;
@@ -15,10 +27,6 @@ body {
   margin-left: auto;
 }
 
-#edo-navbar-content {
-  width: 980px;
-}
-
 #edo-navbar-logo {
   width: 150px;
   float: left;
@@ -26,7 +34,7 @@ body {
 }
 
 .edo-navbar-item {
-  width: 150px;
+  width: 175px;
   float: left;
   margin-left: 4px;
   margin-right: 4px;
@@ -38,6 +46,7 @@ body {
   background-color: #ffffff;
   width: 100%;
   height: 1px;
+  margin-bottom: 2px;
 }
 
 .edo-navbar-name {
@@ -50,19 +59,19 @@ body {
   margin-bottom: auto;
 }
 
+.edo-navbar-name p {
+  font-size: 14px;
+  font-weight: bold;
+}
+
 #edo-navbar-tail {
-  width: 150px;
+  width: 90px;
   float: left;
   text-align: center;
 }
 
-#edo-navbar-tailitems {
-  vertical-align: middle;
-}
-
-#edo-navbar-logo h3 {
-  color: #ffffff;
-  line-height: 80px;
+#edo-navbar-tail img {
+  padding-top: 25px;
 }
 
 .edo-navbar-item p {
@@ -90,6 +99,9 @@ body {
   width: 100%;
   height: 40px;
   bottom: 0;
+  clear: both;
+  z-index: 10;
+  margin-top: -3em;
 }
 
 #edo-footer {
@@ -99,87 +111,41 @@ body {
   text-align: center;
 }
 
-#wrapper {
-  margin: 0 auto;
-  width: 1270px;
-  height: 100%;
+.edo-content-piece {
+  float: left;
 }
 
-#sidebar-wrapper {
-  width: 260px;
-  background: #000000;
-  background-image: url('../assets/filler.jpg');
-  background-repeat: repeat-y;
-  position: absolute;
-  height: 100%;
-  overflow-y: auto;
-  z-index: 1000;
+.edo-content-header {
+  margin-right: auto;
+  margin-left: auto;
+  width: 200px;
 }
 
-#page-content-wrapper {
-  padding-top: 73px;
-  padding-left: 270px;
-  padding-right: 30px;
-  width: 100%;
-  background-color: #19191b;
-}
-
-#logo {
-  padding-bottom: 40px;
-}
-
-.content-header h3 {
+.page-title {
   font-size: 24px;
   color: #1c1c1c;
   margin: 0px;
-  margin: 0;
 }
 
-.page-content {
-  padding-top: 10px;
+.page-title-sub {
+  font-size: 20px;
 }
 
-h3, h1, p {
-  font-family: KozGoPro-ExtraLight;
-  font-size: 24px;
-  color: #1c1c1c;
-  margin: 0px;
-  margin: 0
+.page-subheader {
+  font-size: 18px;
+  font-style: italic;
 }
 
-.page-content h1, label, p {
+.edo-content {
+  padding-top: 20px;
+}
+
+.edo-content p, label {
   font-size: 14px;
   color: #1c1c1c;
-  font-weight: bold;
-  margin-bottom: 0px;
-  margin-top: 0px;
 }
 
-.email {
-  text-align: right;
-}
 
-.page-content {
-  font-size: 14px;
-  color: #1c1c1c;
-  margin: 5px;
-  margin-left: 15px;
-}
-
-div.footer {
-  bottom: 0;
-  height: 40px;
-  margin-top: 40px;
-}
-
-h3.page-title-sub {
-  color: #1c1c1c;
-  font-size: 20;
-}
-
-.inset {
-  padding: 20px;
-}
 
 .center {
   text-align: center;
