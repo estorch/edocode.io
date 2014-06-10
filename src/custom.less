@@ -1,24 +1,34 @@
 body {
   background: #ffffff;
-  overflow: scroll;
+  height: 100%;
+  padding: 0;
+  margin: 0;
 }
 
-h3, h1, p {
+h3, h1, p, label {
   font-family: KozGoPro-ExtraLight;
   font-size: 24px;
   color: #1c1c1c;
   margin: 0px;
-  margin: 0
 }
 
 a:hover{
   text-decoration: none;
 }
 
+#edo-page-wrapper {
+  min-height: 100%;
+  background-image: url('../assets/background.jpg');
+  background-repeat: repeat;
+  position: relative;
+}
+
 #edo-navbar-wrapper {
   background-color: #1c1c1c;
   width: 100%;
   height: 80px;
+  position: relative;
+  top: 0px;
 }
 
 #edo-navbar {
@@ -46,7 +56,7 @@ a:hover{
   background-color: #ffffff;
   width: 100%;
   height: 1px;
-  margin-bottom: 2px;
+  margin-bottom: 3px;
 }
 
 .edo-navbar-name {
@@ -79,29 +89,19 @@ a:hover{
   line-height: 60px;
 }
 
-#edo-content-wrapper {
-  background-image: url('../assets/background.jpg');
-  background-repeat: repeat;
-  padding-top: 20px;
-  width: 100%;
-  height: 100%;
-}
-
 #edo-content {
   width: 980px;
   margin-right: auto;
   margin-left: auto;
+  padding-bottom: 60px;
 }
 
 #edo-footer-wrapper {
   background-color: #d1d1d1;
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 40px;
-  bottom: 0;
-  clear: both;
-  z-index: 10;
-  margin-top: -3em;
+  bottom: 0px;
 }
 
 #edo-footer {
@@ -145,19 +145,31 @@ a:hover{
   color: #1c1c1c;
 }
 
+#edo-footer p {
+  font-size: 14px;
+}
 
+.contact-info {
+  padding-left: 30px;
+}
 
 .center {
   text-align: center;
 }
 
 .email {
-  margin-bottom: 5px;
+  margin-bottom: 3px;
 }
 
 object.resume {
   width: 845px;
   height: 22.25in;
+}
+
+.foobar {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+  text-align: left;
 }
 
 @font-face {

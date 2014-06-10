@@ -9,49 +9,49 @@ html(lang="en")
     meta(name='description', content='Portfolio & Web-Service Demonstration Platform')
     meta(name='keyword', content='Eric Storch, Software Developer, Programmer, Seattle')
   body(ng-app="app", ng-controller="appController")
-body
-  div#edo-navbar-wrapper
-    div#edo-navbar
-      div#edo-navbar-logo
-        a(ng-href="#/about")
-          img(src="assets/logo.jpg")
-      div.edo-navbar-item#about
-        a(ng-href="#/about")
-          div.edo-navbar-overbar#about-bar
-          div.edo-navbar-name
-            p About
-      div.edo-navbar-item#web-services
-        a(ng-href="#/web-services")
-          div.edo-navbar-overbar#web-services-bar
-          div.edo-navbar-name
-            p Web-Services
-      div.edo-navbar-item#resume
-        a(ng-href="#/resume")
-          div.edo-navbar-overbar#resume-bar
-          div.edo-navbar-name
-            p Résumé
-      div.edo-navbar-item#contact
-        a(ng-href="#/contact")
-          div.edo-navbar-overbar#contact-bar
-          div.edo-navbar-name
-            p Contact
-      div#edo-navbar-tail
-        a(href="http://www.linkedin.com/pub/eric-storch/5a/5ba/654/", target="_blank")
-          img.tail-img#linkedin(src='assets/linkedin.jpg')
-        a(href="https://github.com/himalstorch/edocode.io", target="_blank")
-          img.tail-img#github(src='assets/github.jpg')
-  div#edo-content-wrapper
-    div#edo-content
-      div(ng-view)
+    div#edo-page-wrapper
+      div#edo-navbar-wrapper
+        div#edo-navbar
+          div#edo-navbar-logo
+            a(ng-href="#/about", alt="edocode.io - when turtles fly")
+              img(src="assets/logo.jpg")
+          div.edo-navbar-item#about
+            a(ng-href="#/about")
+              div.edo-navbar-overbar#about-bar
+              div.edo-navbar-name
+                p About
+          div.edo-navbar-item#web-services
+            a(ng-href="#/web-services")
+              div.edo-navbar-overbar#web-services-bar
+              div.edo-navbar-name
+                p Web-Services
+          div.edo-navbar-item#resume
+            a(ng-href="#/resume")
+              div.edo-navbar-overbar#resume-bar
+              div.edo-navbar-name
+                p Résumé
+          div.edo-navbar-item#contact
+            a(ng-href="#/contact")
+              div.edo-navbar-overbar#contact-bar
+              div.edo-navbar-name
+                p Contact
+          div#edo-navbar-tail
+            a(href="http://www.linkedin.com/pub/eric-storch/5a/5ba/654/", target="_blank")
+              img.tail-img#linkedin(src='assets/linkedin.jpg')
+            a(href="https://github.com/himalstorch/edocode.io", target="_blank")
+              img.tail-img#github(src='assets/github.jpg')
 
-  div#edo-footer-wrapper
-    div#edo-footer
-      p.page-footer
-        | © 2014 Eric Storch<br>
-        | Site Created With&nbsp;
-        a(href="https://angularjs.org/", target="_blank") AngularJS&nbsp;
-        | /&nbsp;
-        a(href="http://getbootstrap.com/", target="_blank") Bootstrap
+      div#edo-content
+        div(ng-view)
+
+      div#edo-footer-wrapper
+        div#edo-footer
+          p
+            | © 2014 Eric Storch<br>
+            | Site Created With&nbsp;
+            a(href="https://angularjs.org/", target="_blank") AngularJS&nbsp;
+            | /&nbsp;
+            a(href="http://getbootstrap.com/", target="_blank") Bootstrap
 
 link(rel="stylesheet", href="css/bootstrap.css")
 link(rel="stylesheet", href="css/custom.css")
