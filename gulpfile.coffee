@@ -18,8 +18,10 @@ filePath =
   less: { src: './src/custom.less', dest: './_public/css' }
   assets: { src: './assets/*.*', dest: './_public/assets' }
   coffee: { src: './src/**/*.controller.coffee', dest: './_public/js' }
+  services: { src: './src/**/*.service.coffee', dest: './_public/js' }
   angular: { src: './bower_components/angular/angular.js', dest: './_public/js' }
   angular_route: { src: './bower_components/angular-route/angular-route.js', dest: './_public/js' }
+  angular_resource: { src: './bower_components/angular-resource/angular-resource.js', dest: './_public/js' }
   jquery: { src: './bower_components/jquery/dist/jquery.js', dest: './_public/js' }
   js: { src: './src/custom.coffee', dest: './_public/js' }
   fonts: { src: './src/fonts/*.*', dest: './_public/fonts' }
@@ -59,6 +61,10 @@ gulp.task 'coffee', () ->
     .pipe concat('app.js')
     .pipe coffee()
     .pipe gulp.dest filePath.coffee.dest
+  gulp.src filePath.services.src
+    .pipe concat('services.js')
+    .pipe coffee()
+    .pipe gulp.dest filePath.services.dest
 
 # Copy Angular and Angular-route
 gulp.task 'angular', () ->
@@ -66,6 +72,8 @@ gulp.task 'angular', () ->
     .pipe gulp.dest filePath.angular.dest
   gulp.src filePath.angular_route.src
     .pipe gulp.dest filePath.angular_route.dest
+  gulp.src filePath.angular_resource.src
+    .pipe gulp.dest filePath.angular_resource.dest
   gulp.src filePath.jquery.src
     .pipe gulp.dest filePath.jquery.dest
   gulp.src filePath.js.src
@@ -91,7 +99,7 @@ gulp.task 'watch', () ->
   watch({ glob: filePath.assets.src }, () ->
     gulp.start 'assets'
   )
-  watch({ glob: filePath.coffee.src }, () ->
+  watch({ glob: [ filePath.coffee.src, filePath.services.src ] }, () ->
     gulp.start 'coffee'
   )
   watch({ glob: filePath.js.src }, () ->

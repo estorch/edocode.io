@@ -1,6 +1,6 @@
-contact = angular.module('contact', [ ])
+contact = angular.module('contact', [ 'emailService' ])
 
-contact.controller('contactController', ($scope) ->
+contact.controller('contactController', ($scope, emailService) ->
   $scope.title = "Contact Page"
 
   $scope.foo = () ->
@@ -8,5 +8,7 @@ contact.controller('contactController', ($scope) ->
 
   $scope.bar = () ->
     ("eric" + "@" + "edocode.io").split('').reverse().join('')
+
+  emailService.get()
 
 )

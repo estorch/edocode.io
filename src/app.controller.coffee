@@ -1,11 +1,13 @@
 app = angular.module('app', [
   'ngRoute'
+  'ngResource'
   'about'
   'contact'
   'web-services'
   'resume'
   'linkedin'
   'github'
+  'emailService'
 ])
 
 app.config(['$routeProvider', ($routeProvider) ->
