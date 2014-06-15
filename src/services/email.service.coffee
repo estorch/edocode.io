@@ -1,9 +1,9 @@
-email = angular.module('emailService', [ ])
+email = angular.module("email", [ ])
 
-email.service('emailService', ['$http', ($http) ->
+email.service("emailService", ["$http", ($http) ->
   submit: () ->
-    'get ws'
+    "get ws"
   get: () ->
-    $http.get('http://rest-service.guides.spring.io/greeting')
+    $http.get("http://rest-service.guides.spring.io/greeting")
       .success( (data) -> data )
 ])

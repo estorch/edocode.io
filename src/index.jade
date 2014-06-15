@@ -1,6 +1,6 @@
 html(lang="en")
   head
-    title edocode.io - when turtles fly
+    title edocode.io - where turtles fly
     meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
     meta(http-equiv='Content-Style-Type', content='text/css')
     meta(name='copyright', content='© Eric Storch')
@@ -14,34 +14,34 @@ html(lang="en")
         div#edo-navbar
           div#edo-navbar-logo
             a(ng-href="#/about", alt="edocode.io - where turtles fly")
-              img(src="assets/logo.jpg")
+              img(src="assets/images/logo.jpg")
           div.edo-navbar-item#about
             a(ng-href="#/about")
-              div.edo-navbar-overbar#about-bar
-              div.edo-navbar-name
+              div.edo-navbar-overbar#about-overbar
+              div.edo-navbar-name#about-name
                 p About
           div.edo-navbar-item#web-services
             a(ng-href="#/web-services")
-              div.edo-navbar-overbar#web-services-bar
-              div.edo-navbar-name
+              div.edo-navbar-overbar#web-services-overbar
+              div.edo-navbar-name#web-services-name
                 p Web-Services
           div.edo-navbar-item#resume
             a(ng-href="#/resume")
-              div.edo-navbar-overbar#resume-bar
-              div.edo-navbar-name
+              div.edo-navbar-overbar#resume-overbar
+              div.edo-navbar-name#resume-name
                 p Résumé
           div.edo-navbar-item#contact
             a(ng-href="#/contact")
-              div.edo-navbar-overbar#contact-bar
-              div.edo-navbar-name
+              div.edo-navbar-overbar#contact-overbar
+              div.edo-navbar-name#contact-name
                 p Contact
           div#edo-navbar-tail
             a(href="http://www.linkedin.com/pub/eric-storch/5a/5ba/654/", target="_blank")
-              img.tail-img#linkedin(src='assets/linkedin.jpg')
+              img.tail-img#linkedin(src='assets/images/linkedin.jpg')
             a(href="https://github.com/himalstorch/edocode.io", target="_blank")
-              img.tail-img#github(src='assets/github.jpg')
+              img.tail-img#github(src='assets/images/github.jpg')
 
-      div#edo-content
+      div#edo-content-wrapper
         div(ng-view)
 
       div#edo-footer-wrapper
@@ -58,7 +58,10 @@ link(rel="stylesheet", href="css/custom.css")
 script(src="js/angular.js")
 script(src="js/angular-route.js")
 script(src="js/angular-resource.js")
+script(src="js/ui-bootstrap-tpls.js")
 script(src="js/jquery.js")
 script(src="js/app.js")
+script(src="js/templates.js")
 script(src="js/services.js")
 script(src="js/custom.js")
+

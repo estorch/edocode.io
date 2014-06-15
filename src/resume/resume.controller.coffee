@@ -1,5 +1,5 @@
-resume = angular.module('resume', [ ])
+resume = angular.module("resume", [ ])
 
-resume.controller('resumeController', ($scope) ->
+resume.controller("resumeController", ($scope) ->
   $scope.title = "Resume Page"
 )

@@ -1,9 +1,9 @@
 {
-  "name": "onehitcombo",
+  "name": "edocode.io",
   "version": "0.0.0",
-  "homepage": "https://github.com/himalstorch/onehitcombo",
+  "homepage": "https://github.com/himalstorch/edocode.io",
   "authors": [
-    "Eric Storch <eric@onehitcombo.com>"
+    "Eric Storch <eric@edocode.io>"
   ],
   "license": "MIT",
   "ignore": [
@@ -14,9 +14,10 @@
     "tests"
   ],
   "dependencies": {
+    "angular": "~1.2.16",
     "angular-route": "~1.2.16",
     "angular-resource": "~1.2.16",
-    "angular": "~1.2.16",
+    "angular-bootstrap": "0.11.0",
     "bootstrap": "~3.1.1"
   }
 }
