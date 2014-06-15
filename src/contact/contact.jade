@@ -1,14 +1,14 @@
 div.row
   div.col-xs-12
     div.edo-content-header
-      div.edo-content-piece
+      div.edo-content-header-section
         h3.page-title &lsaquo;
-      div.edo-content-piece
+      div.edo-content-header-section
         h3.page-title.center
           | Contact
         h3.page-title.page-title-sub.center
           | Let's Get In Touch!
-      div.edo-content-piece
+      div.edo-content-header-section
         h3.page-title &rsaquo;
 div.edo-content
   div.row
@@ -27,25 +27,25 @@ div.edo-content
           div.row
             label.col-xs-2.email(for="name") Name:
             div.col-xs-6
-              input.form-control.email-input(type="text", placeholder="Name", name="name", id="name")
+              input.form-control.email-input(type="text", placeholder="Name", name="name", id="name", ng-model="email.name")
             div.col-xs-4
         div.form-group
           div.row
             label.col-xs-2.email(for="email") E-mail:
             div.col-xs-6
-              input.form-control.email-input(type="text", placeholder="E-mail", name="email", id="email")
+              input.form-control.email-input(type="text", placeholder="E-mail", name="email", id="email", ng-model="email.email")
             div.col-xs-4
         div.form-group
           div.row
             label.col-xs-2.email(for="message") Message:
             div.col-xs-8
-              textarea.form-control.email-input(rows="8", placeholder="Your Message", name="message", id="message")
+              textarea.form-control.email-input(rows="8", placeholder="Your Message", name="message", id="message", ng-model="email.message")
             div.col-xs-2
         div.form-group
           div.row
             div.col-xs-2
             div.col-xs-2
-              button send
+              button.btn.btn-primary.btn-default send
             div.col-xs-2
-              button clear
+              button.btn.btn-danger(ng-click="clearMessage()") clear
             div.col-xs-6

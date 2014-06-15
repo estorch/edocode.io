@@ -1,9 +1,9 @@
 {
-  "name": "onehitcombo",
+  "name": "edocode.io",
   "version": "0.0.0",
-  "homepage": "https://github.com/himalstorch/onehitcombo",
+  "homepage": "https://github.com/himalstorch/edocode.io",
   "authors": [
-    "Eric Storch <eric@onehitcombo.com>"
+    "Eric Storch <eric@edocode.io>"
   ],
   "license": "MIT",
   "ignore": [

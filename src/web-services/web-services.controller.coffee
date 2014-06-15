@@ -1,6 +1,6 @@
-examples = angular.module('web-services', [ 'checkService' ])
+examples = angular.module("web-services", [ "check" ])
 
-examples.controller('web-servicesController', ($scope, $modal, checkService) ->
+examples.controller("webServicesController", ($scope, $modal, checkService) ->
   $scope.title = "Web-Services Page"
 
   checkService.get(

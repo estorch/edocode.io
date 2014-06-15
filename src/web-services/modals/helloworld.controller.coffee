@@ -1,2 +1,2 @@
 helloWorldModalController = ($scope) ->
-  $scope.title = "MODAL TITLE"
+  $scope.title = 'MODAL TITLE'

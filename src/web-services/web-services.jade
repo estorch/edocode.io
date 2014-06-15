@@ -1,9 +1,9 @@
 div.row
   div.col-xs-12
     div.edo-content-header
-      div.edo-content-piece
+      div.edo-content-header-section
         h3.page-title &lsaquo;
-      div.edo-content-piece
+      div.edo-content-header-section
         h3.page-title.center
           | Web-Services
         h3.page-title.page-title-sub.center
@@ -12,10 +12,10 @@ div.row
             | ONLINE
           span.offline(ng-hide="servicesOnline")
             | OFFLINE
-      div.edo-content-piece
+      div.edo-content-header-section
         h3.page-title &rsaquo;
-          button(ng-click="open()") Click here
 div.edo-content
   div.row
     div.col-xs-12
-
+      div.center
+        button(ng-click="open()") Click here

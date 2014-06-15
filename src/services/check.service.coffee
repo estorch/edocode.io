@@ -1,6 +1,6 @@
-check = angular.module('checkService', [ ])
+check = angular.module("check", [ ])
 
-check.service('checkService', ['$http', ($http) ->
+check.service("checkService", ["$http", ($http) ->
   success = (data, status, headers, config) ->
     data
   error = (data, status, headers, config) ->
