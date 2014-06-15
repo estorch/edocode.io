@@ -1,11 +1,14 @@
 app = angular.module('app', [
   'ngRoute'
+  'ngResource'
   'about'
   'contact'
   'web-services'
   'resume'
   'linkedin'
   'github'
+  'emailService'
+  'checkService'
 ])
 
 app.config(['$routeProvider', ($routeProvider) ->
@@ -32,7 +35,7 @@ app.config(['$routeProvider', ($routeProvider) ->
     })
 ])
 
-app.controller('appController', ['$scope', ($scope) ->
+app.controller('appController', ['$scope', 'checkService', ($scope, checkService) ->
   $scope.title = "Hi Katie"
   $scope.app = "Stuff"
 ])
