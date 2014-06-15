@@ -1,12 +1,11 @@
 app = angular.module('app', [
   'ngRoute'
   'ngResource'
+  'ui.bootstrap'
   'about'
   'contact'
   'web-services'
   'resume'
-  'linkedin'
-  'github'
   'emailService'
   'checkService'
 ])
@@ -21,12 +20,6 @@ app.config(['$routeProvider', ($routeProvider) ->
     }).when('/resume', {
       templateUrl: 'resume/resume.html'
       controller: 'resumeController'
-    }).when('/linkedin', {
-      templateUrl: 'linkedin/linkedin.html'
-      controller: 'linkedinController'
-    }).when('/github', {
-      templateUrl: 'github/github.html'
-      controller: 'githubController'
     }).when('/contact', {
       templateUrl: 'contact/contact.html'
       controller: 'contactController'
@@ -35,7 +28,7 @@ app.config(['$routeProvider', ($routeProvider) ->
     })
 ])
 
-app.controller('appController', ['$scope', 'checkService', ($scope, checkService) ->
+app.controller('appController', ['$scope', ($scope) ->
   $scope.title = "Hi Katie"
   $scope.app = "Stuff"
 ])

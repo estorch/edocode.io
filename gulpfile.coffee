@@ -13,7 +13,7 @@ templateCache = require 'gulp-angular-templatecache'
 filePath =
   root: './'
   index: { src: './src/index.jade', dest: './_public' }
-  templates: { src: [ './src/**/*.jade', '!./src/index.jade' ], dest: './_public' }
+  templates: { src: [ './src/**/*.jade', '!./src/index.jade' ], dest: './_public/js' }
   bootstrap: { src: './bower_components/bootstrap/less/bootstrap.less', dest: './_public/css' }
   less: { src: './src/custom.less', dest: './_public/css' }
   assets: { src: './assets/*.*', dest: './_public/assets' }
@@ -22,6 +22,7 @@ filePath =
   angular: { src: './bower_components/angular/angular.js', dest: './_public/js' }
   angular_route: { src: './bower_components/angular-route/angular-route.js', dest: './_public/js' }
   angular_resource: { src: './bower_components/angular-resource/angular-resource.js', dest: './_public/js' }
+  angular_bootstrap: { src: './bower_components/angular-bootstrap/ui-bootstrap-tpls.js', dest: './_public/js' }
   jquery: { src: './bower_components/jquery/dist/jquery.js', dest: './_public/js' }
   js: { src: './src/custom.coffee', dest: './_public/js' }
   fonts: { src: './src/fonts/*.*', dest: './_public/fonts' }
@@ -31,15 +32,12 @@ gulp.task 'jade', () ->
   gulp.src filePath.index.src
     .pipe jade({ pretty: true })
     .pipe gulp.dest filePath.index.dest
-  gulp.src filePath.templates.src
-    .pipe jade({ pretty: true })
-    .pipe gulp.dest filePath.templates.dest
 
 # Create template cache (template not used yet)
 gulp.task 'templates', () ->
   gulp.src filePath.templates.src
     .pipe jade({ pretty: true })
-    .pipe templateCache()
+    .pipe templateCache({ module: 'app' })
     .pipe gulp.dest filePath.templates.dest
 
 # Copy Twitter Bootstrap
@@ -74,6 +72,8 @@ gulp.task 'angular', () ->
     .pipe gulp.dest filePath.angular_route.dest
   gulp.src filePath.angular_resource.src
     .pipe gulp.dest filePath.angular_resource.dest
+  gulp.src filePath.angular_bootstrap.src
+    .pipe gulp.dest filePath.angular_bootstrap.dest
   gulp.src filePath.jquery.src
     .pipe gulp.dest filePath.jquery.dest
   gulp.src filePath.js.src
