@@ -7,8 +7,10 @@ contact.controller('contactController', ($scope, emailService) ->
     "mailto:" + $scope.bar().split('').reverse().join('')
 
   $scope.bar = () ->
-    ("eric" + "@" + "edocode.io").split('').reverse().join('')
+    "oi.edocode" + baz() + "cire"
+
+  baz = () ->
+    "@"
 
   emailService.get()
-
 )

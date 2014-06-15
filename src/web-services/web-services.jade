@@ -7,10 +7,14 @@ div.row
         h3.page-title.center
           | Web-Services
         h3.page-title.page-title-sub.center
-          | In Development
+          | Status:&nbsp;
+          span.online(ng-show="servicesOnline")
+            | ONLINE
+          span.offline(ng-hide="servicesOnline")
+            | OFFLINE
       div.edo-content-piece
         h3.page-title &rsaquo;
 div.edo-content
   div.row
     div.col-xs-12
-      p <br><br><br><br><br><br><br><br><br><br><br><br>
+
