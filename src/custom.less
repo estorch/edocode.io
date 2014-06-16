@@ -8,7 +8,6 @@ body {
 
 h3, h1, p, label {
   font-family: KozGoPro-ExtraLight;
-  font-size: 24px;
   color: #1c1c1c;
   margin: 0px;
 }
@@ -20,6 +19,10 @@ a:hover{
 @font-face {
   font-family: KozGoPro-ExtraLight;
   src: url('../assets/fonts/KozGoPro-ExtraLight.otf') format('opentype');
+}
+
+[ng-click] {
+  cursor: pointer;
 }
 
 // Page wrapper
@@ -183,6 +186,27 @@ a:hover{
   text-align: center;
 }
 
+.edo-web-service-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.edo-web-service-soap {
+  font-weight: normal;
+  font-size: 20px;
+  color: #3070b8;
+}
+
+.edo-web-service-rest {
+  font-weight: normal;
+  font-size: 20px;
+  color: #f8572b;
+}
+
+.edo-web-service-description {
+  font-size: 12px;
+}
+
 #edo-footer p {
   font-size: 14px;
 }
@@ -211,12 +235,41 @@ object.resume {
   text-align: left;
 }
 
+.checking {
+  font-weight: bold;
+  color: #f59026;
+}
+
 .online {
   font-weight: bold;
-  color: #00FF00;
+  color: #8bc441;
 }
 
 .offline {
   font-weight: bold;
-  color: #FF0000;
+  color: #f34135;
+}
+
+.animate-enter,
+.animate-leave
+{
+  -webkit-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+  -moz-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+  -ms-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+  -o-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+  transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+}
+
+.animate-enter {
+  left: 100%;
+}
+.animate-enter.animate-enter-active {
+  left: 0;
+}
+
+.animate-leave {
+  left: 0;
+}
+.animate-leave.animate-leave-active{
+  left: -100%;
 }

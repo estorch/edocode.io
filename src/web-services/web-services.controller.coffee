@@ -1,17 +1,26 @@
-examples = angular.module("web-services", [ "check" ])
+examples = angular.module("web-services", [ ])
 
-examples.controller("webServicesController", ($scope, $modal, checkService) ->
+examples.controller("webServicesController", ($scope, $modal, checkService, scottismsService) ->
   $scope.title = "Web-Services Page"
+  $scope.status = "unknown"
 
-  checkService.get(
-    (status) ->
-      if status == 200
-        $scope.servicesOnline = true
-      else
-        $scope.servicesOnline = false
-  )
+  check =
+    get: () ->
+      checkService.get(this.success, this.error)
+    success: (data, status, headers, config) ->
+      $scope.status = status
+    error: (data, status, headers, config) ->
+      $scope.status = status
 
-  $scope.open = () ->
+  scottisms =
+    get: () ->
+      scottismsService.get(this.success, this.error)
+    success: (data, status, headers, config) ->
+      $scope.scottisms = data.content
+    error: (data, status, headers, config) ->
+#      $scope.status = status
+
+  $scope.openHelloWorld = () ->
     modalInstance = $modal.open(
       {
         templateUrl: "web-services/modals/helloworld.html"
@@ -19,8 +28,8 @@ examples.controller("webServicesController", ($scope, $modal, checkService) ->
       }
     )
 
-    modalInstance.result.then(
-      () ->
-        alert "modal closed"
-    )
+  $scope.openScottisms = () ->
+    scottisms.get()
+
+  check.get()
 )

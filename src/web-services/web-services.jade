@@ -8,14 +8,41 @@ div.row
           | Web-Services
         h3.page-title.page-title-sub.center
           | Status:&nbsp;
-          span.online(ng-show="servicesOnline")
-            | ONLINE
-          span.offline(ng-hide="servicesOnline")
-            | OFFLINE
-      div.edo-content-header-section
+          button.btn.btn-default
+            span.checking(ng-if="status == 'unknown'")
+              | CHECKING
+            span.online(ng-if="(status >= 200 && status < 300)")
+              | ONLINE ({{ status }})
+            span.offline(ng-if="(status < 200 || status >= 300)")
+              | OFFLINE ({{ status }})
+      div.edo-content-header-section(ng-click="openScottisms()")
         h3.page-title &rsaquo;
 div.edo-content
   div.row
-    div.col-xs-12
-      div.center
-        button(ng-click="open()") Click here
+    div.col-xs-2
+    div.col-xs-10
+      p Below is a list of web-services developed by myself, along with descriptions and links to their repsective GitHub repositories.
+      br
+    div.col-xs-2
+  div.row
+    div.col-xs-6
+      div.row
+        div.col-xs-1
+        div.col-xs-8
+          h3.edo-web-service-title Hello World&nbsp;
+            span.edo-web-service-rest &lsaquo;REST&rsaquo;
+          p.edo-web-service-description A simple request/response web-service that accepts an optional name as a parameter. Returns standard JSON response with a counter variable.
+        div.col-xs-3
+          img.cursor(src="assets/images/arrow.png", ng-click="openHelloWorld()")
+    div.col-xs-6
+      div.row
+        div.col-xs-8
+          h3 Upcoming WS
+            span.edo-web-service-rest &lsaquo;REST&rsaquo;
+        div.col-xs-3
+          img.cursor(src="assets/images/arrow.png", ng-click="")
+        div.col-xs-1
+div
+  textarea.form-control(rows="15", name="response", id="response", ng-model="scottisms")
+
+

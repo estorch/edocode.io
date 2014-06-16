@@ -1,4 +1,4 @@
-email = angular.module("email", [ ])
+email = angular.module("emailService", [ ])
 
 email.service("emailService", ["$http", ($http) ->
   submit: () ->
