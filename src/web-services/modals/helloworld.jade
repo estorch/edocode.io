@@ -8,12 +8,12 @@ div
         div.col-xs-6
           input.form-control.email-input(type="text", placeholder="Name", name="name", id="name", ng-model="request.name")
         div.col-xs-4
-          button.btn.btn-warning.btn-sm(ng-click="clear()") Clear
           button.btn.btn-success.btn-sm(ng-click="submit()") Submit
+          button.btn.btn-warning.btn-sm(ng-click="clear()") Clear
     hr
     div.row
       div.col-xs-6
-        p.center Response Object
+        p.edo-modal-subtitle.cetner Response Object
         div.form-group
           div.row
             label.col-xs-3.email(for="id") ID:
@@ -25,11 +25,10 @@ div
             div.col-xs-9
               input.form-control(type="text", placeholder="Content", name="content", id="content", ng-model="response.content")
       div.col-xs-6
-        p.center Response JSON
+        p.edo-modal-subtitle.cetner Response JSON
         div.form-group
           div.row
-            label.col-xs-2.email(for="response") JSON:
-            div.col-xs-10
+            div.col-xs-12
               textarea.form-control(rows="4", placeholder="Raw JSON", name="response", id="response", ng-model="responseString")
 
   div.modal-footer.edo-modal-footer

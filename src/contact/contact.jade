@@ -13,8 +13,9 @@ div.row
 div.edo-content
   div.row
     div.col-xs-4
-      h3.contact-info
+      p.contact-name
         | Eric Storch<br>
+      p.contact-info
         | 4580 Klahanie Dr SE<br>
         | Suite 465<br>
         | Issaquah, WA 98029<br>
@@ -45,7 +46,7 @@ div.edo-content
           div.row
             div.col-xs-2
             div.col-xs-2
-              button.btn.btn-primary.btn-default send
+              button.btn.btn-primary.btn-default(ng-click="submit()") Send
             div.col-xs-2
-              button.btn.btn-danger(ng-click="clearMessage()") clear
+              button.btn.btn-danger(ng-click="clearMessage()") Clear
             div.col-xs-6

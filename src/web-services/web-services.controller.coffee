@@ -29,7 +29,12 @@ examples.controller("webServicesController", ($scope, $modal, checkService, scot
     )
 
   $scope.openScottisms = () ->
-    scottisms.get()
+    modalInstance = $modal.open(
+      {
+        templateUrl: "web-services/modals/scottisms.html"
+        controller: scottismsModalController
+      }
+    )
 
   check.get()
 )

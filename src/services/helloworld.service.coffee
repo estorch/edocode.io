@@ -4,7 +4,7 @@ check.service("helloWorldService", ["$http", ($http) ->
   get: (request, success, error) ->
     http =
       method: "GET"
-      url: "http://50.132.25.179:8080/greeting"
+      url: "http://50.132.25.179:8080/helloworld"
       params: request
 
     $http(http)

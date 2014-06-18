@@ -8,10 +8,13 @@ coffee = require "gulp-coffee"
 watch = require "gulp-watch"
 plumber = require "gulp-plumber"
 templateCache = require "gulp-angular-templatecache"
+livereload = require "gulp-livereload"
+wait = require "gulp-wait"
 
 # Paths to production files in project and respective destinations
 filePath =
   root: "./"
+  public: "./_public/**/*.*"
   coffee_controllers: { src: "./src/**/*.controller.coffee", dest: "./_public/js" }
   coffee_services: { src: "./src/**/*.service.coffee", dest: "./_public/js" }
   coffee_custom: { src: "./src/custom.coffee", dest: "./_public/js" }
@@ -101,5 +104,11 @@ gulp.task "watch", () ->
     gulp.start "assets"
   )
 
+gulp.task "livereload", [ "coffee", "index", "templates", "less", "assets", "angular" ], () ->
+  livereload.listen()
+  watch({ glob: filePath.public }, () ->
+    livereload.changed()
+  )
+
 # Default tasks
-gulp.task "default", ["coffee", "index", "templates", "less", "assets", "angular", "watch"]
+gulp.task "default", ["coffee", "index", "templates", "less", "assets", "angular", "watch", "livereload"]

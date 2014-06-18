@@ -1,5 +1,5 @@
 helloWorldModalController = ($scope, $modalInstance, helloWorldService) ->
-  $scope.title = "Hello World!"
+  $scope.title = "Hello World"
 
   $scope.request =
     name: ""

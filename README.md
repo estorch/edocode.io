@@ -1,4 +1,4 @@
-onehitcombo
+edocode.io
 ===========
 
-Web-service Demponstration Platform
+Web-service Demonstration Platform

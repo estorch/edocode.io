@@ -1,12 +1,23 @@
 contact = angular.module("contact", [ ])
 
-contact.controller("contactController", ($scope, $modal) ->
+contact.controller("contactController", ($scope, $modal, emailService) ->
   $scope.title = "Contact Page"
 
   $scope.email =
     name: ""
     email: ""
     message: ""
+
+  email =
+    post: () ->
+      emailService.post($scope.email, this.success, this.error)
+    success: () ->
+      1
+    error: () ->
+      1
+
+  $scope.submit = () ->
+    email.post()
 
   $scope.clearMessage = () ->
     modalInstance = $modal.open(
@@ -34,5 +45,4 @@ contact.controller("contactController", ($scope, $modal) ->
 
   baz = () ->
     "@"
-
 )

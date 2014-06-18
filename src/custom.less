@@ -7,7 +7,7 @@ body {
 }
 
 h3, h1, p, label {
-  font-family: KozGoPro-ExtraLight;
+  font-family: KozGoPro-Light;
   color: #1c1c1c;
   margin: 0px;
 }
@@ -17,8 +17,8 @@ a:hover{
 }
 
 @font-face {
-  font-family: KozGoPro-ExtraLight;
-  src: url('../assets/fonts/KozGoPro-ExtraLight.otf') format('opentype');
+  font-family: KozGoPro-Light;
+  src: url('../assets/fonts/KozGoPro-Light.otf') format('opentype');
 }
 
 [ng-click] {
@@ -60,7 +60,6 @@ a:hover{
   margin-right: 4px;
   margin-top: 10px;
   margin-bottom: -10px;
-  font-weight: ;
 }
 
 .edo-navbar-overbar {
@@ -91,6 +90,7 @@ a:hover{
   font-size: 16px;
   color: #ffffff;
   line-height: 60px;
+  font-weight: lighter;
 }
 
 #edo-navbar-tail {
@@ -132,35 +132,55 @@ a:hover{
 }
 
 .page-subheader {
-  font-size: 18px;
+  font-size: 16px;
   font-style: italic;
+}
+
+.page-description {
+  font-size: 16px;
+  margin-left: 50px;
+  margin-right: 65px;
+  text-align: center;
+  padding-bottom: 10px;
+  font-size: 14px;
+}
+
+.page-content {
+  padding-left: 20px;
+  padding-bottom: 15px;
+  font-size: 14px;
 }
 
 .edo-content {
   padding-top: 20px;
 }
 
-.edo-content p, label {
-  font-size: 14px;
-  color: #1c1c1c;
-}
 
 // Modals
 .edo-modal-header {
-  background-color: #f4f4f4;
+  background: #f4f4f4;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
 
 .edo-modal-title {
   text-align: center;
-  font-size: 20px;
+  font-size: 22px;
+  font-style: italic;
+  font-weight: bold;
 }
 
 .edo-modal-body {
   font-size: 14px;
   color: #1c1c1c;
   padding-top: 15px;
+}
+
+.edo-modal-subtitle {
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  padding-bottom: 10px;
 }
 
 .edo-modal-footer {
@@ -188,23 +208,30 @@ a:hover{
 
 .edo-web-service-title {
   font-size: 20px;
-  font-weight: bold;
+  font-style: oblique;
+  padding-bottom: 3px;
 }
 
 .edo-web-service-soap {
   font-weight: normal;
   font-size: 20px;
   color: #3070b8;
+  float: right;
+  font-style: normal;
 }
 
 .edo-web-service-rest {
   font-weight: normal;
   font-size: 20px;
   color: #f8572b;
+  text-align: right;
+  float: right;
+  font-style: normal;
 }
 
 .edo-web-service-description {
-  font-size: 12px;
+  font-size: 13px;
+  padding-left: 20px;
 }
 
 #edo-footer p {
@@ -212,8 +239,16 @@ a:hover{
 }
 
 // General stuff
+.contact-name {
+  padding-left: 30px;
+  padding-bottom: 3px;
+  font-weight: bold;
+  font-size: 22px;
+}
+
 .contact-info {
   padding-left: 30px;
+  font-size: 22px;
 }
 
 .email {
@@ -233,6 +268,7 @@ object.resume {
   direction: rtl;
   unicode-bidi: bidi-override;
   text-align: left;
+  font-style: italic;
 }
 
 .checking {
@@ -250,26 +286,17 @@ object.resume {
   color: #f34135;
 }
 
-.animate-enter,
-.animate-leave
-{
-  -webkit-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-  -moz-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-  -ms-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-  -o-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-  transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+.bottom-buffer {
+  padding: 10px;
 }
 
-.animate-enter {
-  left: 100%;
-}
-.animate-enter.animate-enter-active {
-  left: 0;
+.required {
+  color: #ff0000;
 }
 
-.animate-leave {
-  left: 0;
-}
-.animate-leave.animate-leave-active{
-  left: -100%;
+.photo {
+  border-radius: 5px;
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid #1c1c1c;
 }

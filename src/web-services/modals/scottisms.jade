@@ -1,0 +1,11 @@
+div
+  div.modal-header.edo-modal-header
+    h3.modal-title.edo-modal-title {{ title }}
+  div.modal-body
+    div.form-group
+      div.row
+        div.col-xs-12
+          textarea.form-control(rows="20", placeholder="Scott says....", name="scottisms", id="scottisms", ng-model="response.content")
+  div.modal-footer.edo-modal-footer
+    button.btn.btn-success.btn-sm(ng-click="submit()") Submit
+    button.btn.btn-danger.btn-sm(ng-click="dismiss()") Close
