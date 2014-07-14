@@ -36,5 +36,13 @@ examples.controller("webServicesController", ($scope, $modal, checkService, scot
       }
     )
 
+  $scope.openVisitors = () ->
+    modalInstance = $modal.open(
+      {
+        templateUrl: "web-services/modals/visitors.html"
+        controller: visitorsModalController
+      }
+    )
+
   check.get()
 )

@@ -1,0 +1,36 @@
+div
+  div.modal-header.edo-modal-header
+    h3.modal-title.edo-modal-title {{ title }}
+  div.modal-body
+    div.form-group
+      div.row
+        div.col-xs-4
+          div.row
+            p.edo-modal-subtitle.cetner POST Visitor
+            div.col-xs-6
+              input.form-control.email-input(type="text", placeholder="Name", name="name", id="name", ng-model="postRequest.name")
+            div.col-xs-6
+              button.btn.btn-success.btn-sm(ng-click="submitPost()") Submit
+        div.col-xs-4
+          div.row
+            p.edo-modal-subtitle.cetner GET Visitor by ID
+            div.col-xs-6
+              input.form-control.email-input(type="text", placeholder="ID", name="id", id="id", ng-model="getRequest.id")
+            div.col-xs-6
+              button.btn.btn-success.btn-sm(ng-click="submitGet()") Submit
+        div.col-xs-4
+          div.row
+            p.edo-modal-subtitle.cetner GET Visitor List
+            div.col-xs-12.center
+              button.btn.btn-success.btn-sm(ng-click="submitGetAll()") Submit
+    hr
+    div.row
+      div.col-xs-12
+        p.edo-modal-subtitle.cetner Response JSON
+        div.form-group
+          div.row
+            div.col-xs-12
+              textarea.form-control(rows="8", placeholder="Raw JSON", name="response", id="response", ng-model="responseString")
+
+  div.modal-footer.edo-modal-footer
+    button.btn.btn-danger.btn-sm(ng-click="dismiss()") Close
