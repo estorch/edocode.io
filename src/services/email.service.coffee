@@ -1,6 +1,7 @@
 email = angular.module("emailService", [ ])
 
 email.service("emailService", ["$http", ($http) ->
+  # Service accessor object: bulds HTTP object and calls $http with it and the passed callbacks
   post: (data, success, error) ->
     request =
       From : "eric@edocode.io"

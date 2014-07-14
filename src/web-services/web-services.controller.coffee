@@ -4,6 +4,7 @@ examples.controller("webServicesController", ($scope, $modal, checkService, scot
   $scope.title = "Web-Services Page"
   $scope.status = "unknown"
 
+  # Check service accessor object with success/failure callbacks
   check =
     get: () ->
       checkService.get(this.success, this.error)
@@ -12,14 +13,15 @@ examples.controller("webServicesController", ($scope, $modal, checkService, scot
     error: (data, status, headers, config) ->
       $scope.status = status
 
+  # Scottisms service accessor object with success/failure callbacks
   scottisms =
     get: () ->
       scottismsService.get(this.success, this.error)
     success: (data, status, headers, config) ->
       $scope.scottisms = data.content
     error: (data, status, headers, config) ->
-#      $scope.status = status
 
+  # Opens HelloWorld web-service modal
   $scope.openHelloWorld = () ->
     modalInstance = $modal.open(
       {
@@ -28,6 +30,7 @@ examples.controller("webServicesController", ($scope, $modal, checkService, scot
       }
     )
 
+  # Opens Scottisms web-service modal
   $scope.openScottisms = () ->
     modalInstance = $modal.open(
       {
@@ -36,6 +39,7 @@ examples.controller("webServicesController", ($scope, $modal, checkService, scot
       }
     )
 
+  # Opens Visitors web-service modal
   $scope.openVisitors = () ->
     modalInstance = $modal.open(
       {
@@ -44,5 +48,6 @@ examples.controller("webServicesController", ($scope, $modal, checkService, scot
       }
     )
 
+  # Run web-service check on page load
   check.get()
 )

@@ -1,4 +1,4 @@
-# On mouse-over, change color of meny bars
+# On mouse-over, change color of menu bars
 $(".edo-navbar-item").hover ( () ->
   id = this.id + "-overbar"
   switch (id)
@@ -9,6 +9,7 @@ $(".edo-navbar-item").hover ( () ->
   element = document.getElementById(id);
   element.className = "edo-navbar-overbar-mouseover";
   element.setAttribute("style", "background-color: " + color);
+
   id = this.id + "-name"
   element = document.getElementById(id);
   element.setAttribute("style", "font-weight: bold");
@@ -17,6 +18,7 @@ $(".edo-navbar-item").hover ( () ->
   element = document.getElementById(id);
   element.className = "edo-navbar-overbar";
   element.setAttribute("style", "background-color: #ffffff;");
+
   id = this.id + "-name"
   element = document.getElementById(id);
   element.setAttribute("style", "font-weight: normal");

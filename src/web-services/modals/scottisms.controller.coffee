@@ -1,6 +1,7 @@
 scottismsModalController = ($scope, $modalInstance, scottismsService) ->
   $scope.title = "Things Scott Says"
 
+  # Scottisms service accessor object with success/failure callbacks
   scottisms =
     get: () ->
       scottismsService.get(this.success, this.error);
@@ -10,12 +11,10 @@ scottismsModalController = ($scope, $modalInstance, scottismsService) ->
     error: (data, status, headers, config) ->
       $scope.response = data
 
+  # Method to start the web-service GET process
   $scope.submit = () ->
     scottisms.get();
 
+  # Cancels the modal
   $scope.dismiss = () ->
     $modalInstance.dismiss();
-
-  $scope.clear = () ->
-    delete $scope.response
-    delete $scope.responseString

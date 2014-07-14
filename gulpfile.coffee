@@ -66,6 +66,7 @@ gulp.task "less", () ->
     .pipe less()
       .pipe gulp.dest filePath.less_custom.dest
 
+# Copy all assets (images, pdfs, fonts)
 gulp.task "assets", () ->
   gulp.src filePath.assets.src
     .pipe gulp.dest filePath.assets.dest
@@ -104,6 +105,7 @@ gulp.task "watch", () ->
     gulp.start "assets"
   )
 
+# Enable livereload
 gulp.task "livereload", [ "coffee", "index", "templates", "less", "assets", "angular" ], () ->
   livereload.listen()
   watch({ glob: filePath.public }, () ->

@@ -38,5 +38,6 @@ app.config(["$httpProvider", ($httpProvider) ->
 ])
 
 app.controller("appController", ["$scope", ($scope) ->
+  # Shout-out to my fiance
   $scope.title = "Hi Katie!"
 ])

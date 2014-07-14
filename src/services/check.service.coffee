@@ -1,6 +1,7 @@
 check = angular.module("check", [ ])
 
 check.service("checkService", ["$http", ($http) ->
+  # Service accessor object: bulds HTTP object and calls $http with it and the passed callbacks
   get: (success, error) ->
     http =
       method: "GET"

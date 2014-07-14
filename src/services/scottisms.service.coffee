@@ -1,6 +1,7 @@
 scottisms = angular.module("scottisms", [ ])
 
 scottisms.service("scottismsService", ["$http", ($http) ->
+  # Service accessor object: bulds HTTP object and calls $http with it and the passed callbacks
   get: (success, error) ->
     http =
       method: "GET"

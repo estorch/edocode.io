@@ -1,6 +1,7 @@
 check = angular.module("visitors", [ ])
 
 check.service("visitorsService", ["$http", ($http) ->
+  # Service accessor object: bulds HTTP object and calls $http with it and the passed callbacks
   get: (request, success, error) ->
     http =
       method: "GET"
@@ -15,6 +16,8 @@ check.service("visitorsService", ["$http", ($http) ->
         (data, status, headers, config) ->
           error(data, status, headers, config)
       )
+
+  # Service accessor object: bulds HTTP object and calls $http with it and the passed callbacks
   getAll: (request, success, error) ->
     http =
       method: "GET"
@@ -29,6 +32,8 @@ check.service("visitorsService", ["$http", ($http) ->
         (data, status, headers, config) ->
           error(data, status, headers, config)
       )
+
+  # Service accessor object: bulds HTTP object and calls $http with it and the passed callbacks
   post: (request, success, error) ->
     http =
       method: "POST"
@@ -36,7 +41,6 @@ check.service("visitorsService", ["$http", ($http) ->
       data: request
       dataType: 'json'
 
-    console.log request
     $http(http)
     .success(
         (data, status, headers, config) ->
