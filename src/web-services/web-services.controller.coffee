@@ -1,17 +1,28 @@
-examples = angular.module("web-services", [ "check" ])
+examples = angular.module("web-services", [ ])
 
-examples.controller("webServicesController", ($scope, $modal, checkService) ->
+examples.controller("webServicesController", ($scope, $modal, checkService, scottismsService) ->
   $scope.title = "Web-Services Page"
+  $scope.status = "unknown"
 
-  checkService.get(
-    (status) ->
-      if status == 200
-        $scope.servicesOnline = true
-      else
-        $scope.servicesOnline = false
-  )
+  # Check service accessor object with success/failure callbacks
+  check =
+    get: () ->
+      checkService.get(this.success, this.error)
+    success: (data, status, headers, config) ->
+      $scope.status = status
+    error: (data, status, headers, config) ->
+      $scope.status = status
 
-  $scope.open = () ->
+  # Scottisms service accessor object with success/failure callbacks
+  scottisms =
+    get: () ->
+      scottismsService.get(this.success, this.error)
+    success: (data, status, headers, config) ->
+      $scope.scottisms = data.content
+    error: (data, status, headers, config) ->
+
+  # Opens HelloWorld web-service modal
+  $scope.openHelloWorld = () ->
     modalInstance = $modal.open(
       {
         templateUrl: "web-services/modals/helloworld.html"
@@ -19,8 +30,24 @@ examples.controller("webServicesController", ($scope, $modal, checkService) ->
       }
     )
 
-    modalInstance.result.then(
-      () ->
-        alert "modal closed"
+  # Opens Scottisms web-service modal
+  $scope.openScottisms = () ->
+    modalInstance = $modal.open(
+      {
+        templateUrl: "web-services/modals/scottisms.html"
+        controller: scottismsModalController
+      }
     )
+
+  # Opens Visitors web-service modal
+  $scope.openVisitors = () ->
+    modalInstance = $modal.open(
+      {
+        templateUrl: "web-services/modals/visitors.html"
+        controller: visitorsModalController
+      }
+    )
+
+  # Run web-service check on page load
+  check.get()
 )

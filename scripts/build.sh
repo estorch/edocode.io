@@ -1,4 +1,4 @@
 #!/bin/bash
-rm -rf _public
+rm -rf _public/*.*
 
 gulp --require coffee-script

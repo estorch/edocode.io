@@ -1,7 +1,35 @@
 div
-  div.modal-header
-    h3.modal-title {{ title }}
+  div.modal-header.edo-modal-header
+    h3.modal-title.edo-modal-title {{ title }}
   div.modal-body
-    p Hi thar Katie...
-  div.modal-footer
+    div.form-group
+      div.row
+        label.col-xs-2.email(for="name") Name:
+        div.col-xs-6
+          input.form-control.email-input(type="text", placeholder="Name", name="name", id="name", ng-model="request.name")
+        div.col-xs-4
+          button.btn.btn-success.btn-sm(ng-click="submit()") Submit (GET)
+          button.btn.btn-warning.btn-sm(ng-click="clear()") Clear
+    hr
+    div.row
+      div.col-xs-6
+        p.edo-modal-subtitle.cetner Response Object
+        div.form-group
+          div.row
+            label.col-xs-3.email(for="id") ID:
+            div.col-xs-9
+              input.form-control(type="text", placeholder="Id", name="id", id="id", ng-model="response.id")
+        div.form-group
+          div.row
+            label.col-xs-3.email(for="content") Content:
+            div.col-xs-9
+              input.form-control(type="text", placeholder="Content", name="content", id="content", ng-model="response.content")
+      div.col-xs-6
+        p.edo-modal-subtitle.cetner Response JSON
+        div.form-group
+          div.row
+            div.col-xs-12
+              textarea.form-control(rows="4", placeholder="Raw JSON", name="response", id="response", ng-model="responseString")
 
+  div.modal-footer.edo-modal-footer
+    button.btn.btn-danger.btn-sm(ng-click="dismiss()") Close
