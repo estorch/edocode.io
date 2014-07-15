@@ -32,28 +32,45 @@ div.edo-content
         div.col-xs-8
           h3.edo-web-service-title.pull-r Hello World&nbsp;
             span.edo-web-service-rest &lsaquo;REST&rsaquo;
-          p.edo-web-service-description A simple request/response web-service that accepts an optional name as a parameter. Returns standard JSON response with a counter variable.
+          p.edo-web-service-description A simple web-service which accepts an optional name as a URL parameter. Returns standard JSON response with a counter variable.
         div.col-xs-3
           img.cursor(src="assets/images/arrow.png", ng-click="openHelloWorld()")
-    div.col-xs-6
-      div.row
-        div.col-xs-8
-          h3.edo-web-service-title Upcoming WS&nbsp;
-            span.edo-web-service-soap &lsaquo;SOAP&rsaquo;
-        div.col-xs-3
-          img.cursor(src="assets/images/arrow.png", ng-click="")
-        div.col-xs-1
-  div.row.bottom-buffer
     div.col-xs-6
       div.row
         div.col-xs-1
         div.col-xs-8
           h3.edo-web-service-title Visitors&nbsp;
             span.edo-web-service-rest &lsaquo;REST&rsaquo;
-          p.edo-web-service-description A service which accepts a visitor's signature and stores it in a visitors log along with an ID and date. Also returns either a specific visitor entry or all of them.
+          p.edo-web-service-description A service which accepts a visitor's signature, logs it with auto-generated ID and date, and returns it. Can also return all visitors as a list.
         div.col-xs-3
           img.cursor(src="assets/images/arrow.png", ng-click="openVisitors()")
+  div.row.bottom-buffer
     div.col-xs-6
-
-
-
+      div.row
+        div.col-xs-1
+        div.col-xs-8
+          h3.edo-web-service-title.pull-r Sort&nbsp;
+            span.edo-web-service-rest &lsaquo;REST&rsaquo;
+          p.edo-web-service-description A web-service which accepts a list of integers and a specified sorting method. The back-end then sorts the values and returns them.
+        div.col-xs-3
+          img.cursor(src="assets/images/arrow.png", ng-click="openSort()")
+    div.col-xs-6
+      div.row
+        div.col-xs-1
+        div.col-xs-8
+          h3.edo-web-service-title Upcoming WS&nbsp;
+            span.edo-web-service-rest &lsaquo;REST&rsaquo;
+          p.edo-web-service-description
+        div.col-xs-3
+          img.cursor(src="assets/images/arrow.png", ng-click="openVisitors()")
+  hr
+  div.row.bottom-buffer
+    div.col-xs-6
+      div.row
+        div.col-xs-1
+        div.col-xs-8
+          h3.edo-web-service-title Upcoming WS&nbsp;
+            span.edo-web-service-soap &lsaquo;SOAP&rsaquo;
+        div.col-xs-3
+          img.cursor(src="assets/images/arrow.png", ng-click="")
+        div.col-xs-1

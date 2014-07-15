@@ -48,6 +48,15 @@ examples.controller("webServicesController", ($scope, $modal, checkService, scot
       }
     )
 
+  # Opens Visitors web-service modal
+  $scope.openSort = () ->
+    modalInstance = $modal.open(
+      {
+        templateUrl: "web-services/modals/sort.html"
+        controller: sortModalController
+      }
+    )
+
   # Run web-service check on page load
   check.get()
 )
