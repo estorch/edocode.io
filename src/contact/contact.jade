@@ -12,7 +12,7 @@ div.row
         h3.page-title &rsaquo;
 div.edo-content
   div.row
-    div.col-xs-12
+    div.col-xs-4
       p.contact-name
         | Eric Storch<br>
       p.contact-info
@@ -22,3 +22,30 @@ div.edo-content
         | (702) 875-3312<br>
         a.foobar(href="{{ foo() }}", target="_top")
           | {{ bar() }}
+    div.col-xs-8
+      div.form-group
+        div.row
+          label.col-xs-2.email(for="name") Name:
+          div.col-xs-6
+            input.form-control(type="text", placeholder="Name", name="name", id="name", ng-model="email.name")
+          div.col-xs-4
+      div.form-group
+        div.row
+          label.col-xs-2.email(for="email") E-mail:
+          div.col-xs-6
+            input.form-control(type="text", placeholder="E-mail", name="email", id="email", ng-model="email.email")
+          div.col-xs-4
+      div.form-group
+        div.row
+          label.col-xs-2.email(for="message") Message:
+          div.col-xs-8
+            textarea.form-control(rows="8", placeholder="Your Message", name="message", id="message", ng-model="email.message")
+          div.col-xs-2
+      div.form-group
+        div.row
+          div.col-xs-2
+          div.col-xs-2
+            button.btn.btn-primary.btn-default(ng-click="submit()") Send
+          div.col-xs-2
+            button.btn.btn-danger(ng-click="clearMessage()") Clear
+          div.col-xs-6

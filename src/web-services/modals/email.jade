@@ -1,0 +1,41 @@
+div
+  div.modal-header.edo-modal-header
+    h3.modal-title.edo-modal-title {{ title }}
+  div.modal-body
+    div.form-group
+      div.row
+        label.col-xs-2.email(for="name") Name:
+        div.col-xs-6
+          input.form-control(type="text", placeholder="Name", name="name", id="name", ng-model="request.name")
+        div.col-xs-4
+    div.form-group
+      div.row
+        label.col-xs-2.email(for="email") E-mail:
+        div.col-xs-6
+          input.form-control(type="text", placeholder="E-mail", name="email", id="email", ng-model="request.email")
+        div.col-xs-4
+    div.form-group
+      div.row
+        label.col-xs-2.email(for="message") Message:
+        div.col-xs-8
+          textarea.form-control(rows="8", placeholder="Your Message", name="message", id="message", ng-model="request.message")
+        div.col-xs-2
+    div.form-group
+      div.row
+        div.col-xs-2
+        div.col-xs-2
+          button.btn.btn-primary.btn-default(ng-click="submit()") Send
+        div.col-xs-2
+          button.btn.btn-danger(ng-click="clearMessage()") Clear
+        div.col-xs-6
+    hr
+    div.row
+      div.col-xs-12
+        p.edo-modal-subtitle.cetner Response JSON
+        div.form-group
+          div.row
+            div.col-xs-12
+              textarea.form-control(rows="4", placeholder="Raw JSON", name="response", id="response", ng-model="responseString")
+
+  div.modal-footer.edo-modal-footer
+    button.btn.btn-danger.btn-sm(ng-click="dismiss()") Close

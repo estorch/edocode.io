@@ -14,13 +14,28 @@ contact.controller("contactController", ($scope, $modal, emailService) ->
     post: () ->
       emailService.post($scope.email, this.success, this.error)
     success: () ->
-      1
+      $scope.status = status
     error: () ->
-      1
+      $scope.status = status
 
   # Starts email submission process
   $scope.submit = () ->
     email.post()
+    modalInstance = $modal.open(
+      {
+        templateUrl: "contact/modals/thanks.html"
+        controller: thanksModalController
+        size: "sm"
+      }
+    )
+
+    modalInstance.result.then(
+      () ->
+        $scope.email =
+          name: ""
+          email: ""
+          message: ""
+    )
 
   # Modal for clear message confirmation
   $scope.clearMessage = () ->

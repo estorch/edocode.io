@@ -48,12 +48,21 @@ examples.controller("webServicesController", ($scope, $modal, checkService, scot
       }
     )
 
-  # Opens Visitors web-service modal
+  # Opens Sort web-service modal
   $scope.openSort = () ->
     modalInstance = $modal.open(
       {
         templateUrl: "web-services/modals/sort.html"
         controller: sortModalController
+      }
+    )
+
+  # Opens Sort web-service modal
+  $scope.openEmail = () ->
+    modalInstance = $modal.open(
+      {
+        templateUrl: "web-services/modals/email.html"
+        controller: emailModalController
       }
     )
 

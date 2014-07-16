@@ -58,11 +58,22 @@ div.edo-content
       div.row
         div.col-xs-1
         div.col-xs-8
-          h3.edo-web-service-title Upcoming WS&nbsp;
+          h3.edo-web-service-title Email
+            span.edo-web-service-rest &lsaquo;REST&rsaquo;
+          p.edo-web-service-description A service that recieves email data (name, email address, message) and uses JavaMail (soon Spring Mailer) to create and send the email.
+        div.col-xs-3
+          img.cursor(src="assets/images/arrow.png", ng-click="openEmail()")
+  div.row.bottom-buffer
+    div.col-xs-6
+      div.row
+        div.col-xs-1
+        div.col-xs-8
+          h3.edo-web-service-title.pull-r Upcoming WS&nbsp;
             span.edo-web-service-rest &lsaquo;REST&rsaquo;
           p.edo-web-service-description
         div.col-xs-3
-          img.cursor(src="assets/images/arrow.png", ng-click="openVisitors()")
+          img.cursor(src="assets/images/arrow.png", ng-click="")
+
   hr
   div.row.bottom-buffer
     div.col-xs-6
