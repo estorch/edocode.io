@@ -4,12 +4,12 @@ app = angular.module("app", [
   "ui.bootstrap"
   "about"
   "contact"
-  "web-services"
+  "services"
   "resume"
   "check"
   "helloWorld"
   "scottisms"
-  "emailService"
+  "email"
   "visitors"
   "sort"
 ])
@@ -20,9 +20,9 @@ app.config(["$routeProvider", ($routeProvider) ->
   $routeProvider.when("/about", {
       templateUrl: "about/about.html"
       controller: "aboutController"
-    }).when("/web-services", {
-      templateUrl: "web-services/web-services.html"
-      controller: "webServicesController"
+    }).when("/services", {
+      templateUrl: "web-services/services.html"
+      controller: "servicesController"
     }).when("/resume", {
       templateUrl: "resume/resume.html"
       controller: "resumeController"
@@ -40,5 +40,5 @@ app.config(["$httpProvider", ($httpProvider) ->
 
 app.controller("appController", ["$scope", ($scope) ->
   # Shout-out to my fiance
-  $scope.title = "Hi Katie!"
+  $scope.pageTitle = "Hi Katie!"
 ])

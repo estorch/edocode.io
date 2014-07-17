@@ -1,9 +1,6 @@
-examples = angular.module("web-services", [ ])
+services = angular.module("services", [ ])
 
-examples.controller("webServicesController", ($scope, $modal, checkService, scottismsService) ->
-  $scope.title = "Web-Services Page"
-  $scope.status = "unknown"
-
+services.controller("servicesController", ($scope, $modal, checkService, scottismsService) ->
   # Check service accessor object with success/failure callbacks
   check =
     get: () ->
@@ -19,7 +16,12 @@ examples.controller("webServicesController", ($scope, $modal, checkService, scot
       scottismsService.get(this.success, this.error)
     success: (data, status, headers, config) ->
       $scope.scottisms = data.content
+      $scope.status = status
     error: (data, status, headers, config) ->
+      $scope.status = status
+
+  $scope.pageTitle = "Web-Services"
+  $scope.status = "unknown"
 
   # Opens HelloWorld web-service modal
   $scope.openHelloWorld = () ->

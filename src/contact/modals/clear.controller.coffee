@@ -1,5 +1,5 @@
-thanksModalController = ($scope, $modalInstance) ->
-  $scope.title = 'Thanks'
+clearModalController = ($scope, $modalInstance) ->
+  $scope.title = 'Confirm Message Clear'
 
   # Confirm modal
   $scope.confirm = () ->
