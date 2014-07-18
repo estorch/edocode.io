@@ -12,5 +12,4 @@ ip.service("ipService", ($http, apiPrefix) ->
       data: data
 
     $http(http)
-      .success().error()
 )

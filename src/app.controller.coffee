@@ -40,7 +40,7 @@ app.config(["$httpProvider", ($httpProvider) ->
 ])
 
 app.constant('apiPrefix', 'http://50.132.25.179:8080')
-app.constant('apiPrefixLocal', 'http://127.0.0.1:8080')
+#app.constant('apiPrefix', 'http://127.0.0.1:8080')
 
 app.controller("appController", ($scope, ipService) ->
   # Shout-out to my fiance

@@ -28,7 +28,7 @@ div.edo-content
           div.row
             label.col-xs-2.email(for="name") Name:
             div.col-xs-6
-              input.form-control(type="text", placeholder="Name", name="name", id="name", ng-model="email.name", ng-maxlength="25", required)
+              input.form-control(type="text", placeholder="Name", name="name", id="name", ng-model="email.name", ng-maxlength="30", required)
               span.required(ng-show="contactForm.name.$valid || contactForm.name.$pristine") &nbsp;
               span.required(ng-show="contactForm.name.$error.required && contactForm.name.$dirty") Name required
               span.required(ng-show="contactForm.name.$error.maxlength") Name too long
@@ -37,7 +37,7 @@ div.edo-content
           div.row
             label.col-xs-2.email(for="email") E-mail:
             div.col-xs-6
-              input.form-control(type="email", placeholder="Email", name="email", id="email", ng-model="email.email", required)
+              input.form-control(type="email", placeholder="Email", name="email", id="email", ng-model="email.email", ng-maxlength="254", required)
               span.required(ng-show="contactForm.email.$valid || contactForm.email.$pristine") &nbsp;
               span.required(ng-show="contactForm.email.$invalid && contactForm.email.$dirty") Valid email required
             div.col-xs-4
@@ -57,6 +57,5 @@ div.edo-content
             div.col-xs-2
               button.btn.btn-primary.btn-block.btn-default.pull-right(ng-click="submit()", ng-disabled="contactForm.$invalid || sendButtonLock") {{ sendButtonText }}
             div.col-xs-2
-              button.btn.btn-danger.btn-block.pull-right(ng-click="clearMessage()") Clear
+              button.btn.btn-warning.btn-block.pull-right(ng-click="clearMessage()") Clear
             div.col-xs-1
-
