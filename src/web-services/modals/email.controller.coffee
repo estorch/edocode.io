@@ -20,11 +20,11 @@ emailModalController = ($scope, $modalInstance, emailService) ->
 
   # Method to start the web-service GET process
   $scope.submit = () ->
-    email.post();
+    email.post()
 
   # Cancels the modal
   $scope.dismiss = () ->
-    $modalInstance.dismiss();
+    $modalInstance.dismiss()
 
   # Clears entered data in the modal
   $scope.clear = () ->

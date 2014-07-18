@@ -1,11 +1,4 @@
 sortModalController = ($scope, $modalInstance, sortService) ->
-  $scope.title = "Sort"
-
-  # Sort request object
-  $scope.request =
-    nums: "7,4,2,3,9,10,5,8,6,1"
-    sort: "bubble"
-
   # Sort service accessor object with success/failure callbacks
   sort =
     get: () ->
@@ -17,17 +10,32 @@ sortModalController = ($scope, $modalInstance, sortService) ->
       $scope.response = data
       $scope.responseString = JSON.stringify(data)
 
+  # Clear the request object
+  clearRequest = () ->
+    $scope.request =
+      nums: "7,4,2,3,9,10,5,8,6,1"
+      sort: "bubble"
+
+  # Clear the response object
+  clearResponse = () ->
+    $scope.response = null
+    $scope.responseString = ""
+
+  # Self-explanitory scope variables
+  $scope.pageTitle = "Sort"
+  $scope.request =
+    nums: "7,4,2,3,9,10,5,8,6,1"
+    sort: "bubble"
+
   # Method to start the web-service GET process
   $scope.submit = () ->
-    sort.get();
+    sort.get()
 
   # Cancels the modal
   $scope.dismiss = () ->
-    $modalInstance.dismiss();
+    $modalInstance.dismiss()
 
   # Clears entered data in the modal
   $scope.clear = () ->
-    $scope.request =
-      name: ""
-    delete $scope.response
-    delete $scope.responseString
+    clearRequest()
+    clearResponse()

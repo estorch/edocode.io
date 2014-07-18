@@ -1,6 +1,6 @@
 div
   div.modal-header.edo-modal-header
-    h3.modal-title.edo-modal-title {{ title }}
+    h3.modal-title.edo-modal-title {{ pageTitle }}
   div.modal-body
     div.form-group
       div.row
@@ -17,12 +17,12 @@ div
             div.col-xs-6
               input.form-control.email-input(type="text", placeholder="ID", name="id", id="id", ng-model="getRequest.id")
             div.col-xs-6
-              button.btn.btn-success.btn-sm(ng-click="submitGet()") Submit
+              button.btn.btn-success.btn-sm(ng-click="submitGetId()") Submit
         div.col-xs-4
           div.row
             p.edo-modal-subtitle.cetner GET Visitor List
             div.col-xs-12.center
-              button.btn.btn-success.btn-sm(ng-click="submitGetAll()") Submit
+              button.btn.btn-success.btn-sm(ng-click="submitGet()") Submit
     hr
     div.row
       div.col-xs-12
@@ -33,4 +33,5 @@ div
               textarea.form-control(rows="8", placeholder="Raw JSON", name="response", id="response", ng-model="responseString")
 
   div.modal-footer.edo-modal-footer
+    button.btn.btn-warning.btn-sm(ng-click="clear()") Clear
     button.btn.btn-danger.btn-sm(ng-click="dismiss()") Close

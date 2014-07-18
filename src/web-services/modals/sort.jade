@@ -1,6 +1,6 @@
 div
   div.modal-header.edo-modal-header
-    h3.modal-title.edo-modal-title {{ title }}
+    h3.modal-title.edo-modal-title {{ pageTitle }}
   div.modal-body
     div.form-group
       div.row
@@ -11,12 +11,12 @@ div
           button.btn.btn-success.btn-sm(ng-click="submit()") Submit (GET)
           button.btn.btn-warning.btn-sm(ng-click="clear()") Clear
     div.row
+      label.col-xs-2.email(for="name") Algorithm:
       div.col-xs-2
         div.radio
           label
             input(type="radio", name="sortRadio", id="bubbleSort", value="bubble", ng-model="request.sort", checked)
             p Bubble
-      div.col-xs-2
         div.radio
           label
             input(type="radio", name="sortRadio", id="selectionSort", value="selection", ng-model="request.sort")
@@ -25,13 +25,27 @@ div
         div.radio
           label
             input(type="radio", name="sortRadio", id="quickSort", value="quick", ng-model="request.sort")
-            p Quick
+            p
+              s Quick
+        div.radio
+          label
+            input(type="radio", name="sortRadio", id="mergeSort", value="merge", ng-model="request.sort")
+            input(type="radio", name="sortRadio", id="mergeSort", value="merge", ng-model="request.sort")
+            p
+              s Merge
       div.col-xs-2
+        div.radio
+          label
+            input(type="radio", name="sortRadio", id="RadixSort", value="radix", ng-model="request.sort")
+            p
+              s Radix
         div.radio
           label
             input(type="radio", name="sortRadio", id="bogoSort", value="bogo", ng-model="request.sort")
             p Bogo
       div.col-xs-4
+        p.sort-caveat(ng-show="request.sort != 'bogo'") Stiked selections are not yet developed. Bubble will be used in their place.
+        p.sort-caveat(ng-show="request.sort == 'bogo'") Feelin' lucky, eh? Your sort list will be limited to the first 10 values for Bogo or else it'd hose the server. Have fun!
     hr
     div.row
       div.col-xs-12

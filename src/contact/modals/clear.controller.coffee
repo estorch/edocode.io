@@ -3,8 +3,8 @@ clearModalController = ($scope, $modalInstance) ->
 
   # Confirm modal
   $scope.confirm = () ->
-    $modalInstance.close();
+    $modalInstance.close()
 
   # Cancel modal
   $scope.dismiss = () ->
-    $modalInstance.dismiss();
+    $modalInstance.dismiss()
