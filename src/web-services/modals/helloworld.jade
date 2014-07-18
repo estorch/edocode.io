@@ -1,10 +1,10 @@
 div
   div.modal-header.edo-modal-header
-    h3.modal-title.edo-modal-title {{ title }}
+    h3.modal-title.edo-modal-title {{ pageTitle }}
   div.modal-body
     div.form-group
       div.row
-        label.col-xs-2.email(for="name") Name:
+        label.col-xs-2.email(for="name") Name: (optional)
         div.col-xs-6
           input.form-control.email-input(type="text", placeholder="Name", name="name", id="name", ng-model="request.name")
         div.col-xs-4

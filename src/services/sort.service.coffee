@@ -1,11 +1,12 @@
-check = angular.module("check", [ ])
+check = angular.module("sort", [ ])
 
-check.service("checkService", ($http, apiPrefix) ->
+check.service("sortService", ($http, apiPrefix) ->
   # Service accessor object: bulds HTTP object and calls $http with it and the passed callbacks
-  get: (success, error) ->
+  get: (request, success, error) ->
     http =
       method: "GET"
-      url: apiPrefix + "/check"
+      url: apiPrefix + "/sort"
+      params: request
 
     $http(http)
       .success(

@@ -1,11 +1,11 @@
 scottisms = angular.module("scottisms", [ ])
 
-scottisms.service("scottismsService", ["$http", ($http) ->
+scottisms.service("scottismsService", ($http, apiPrefix) ->
   # Service accessor object: bulds HTTP object and calls $http with it and the passed callbacks
   get: (success, error) ->
     http =
       method: "GET"
-      url: "http://50.132.25.179:8080/scottisms"
+      url: apiPrefix + "/scottisms"
 
     $http(http)
       .success(
@@ -16,4 +16,4 @@ scottisms.service("scottismsService", ["$http", ($http) ->
         (data, status, headers, config) ->
           error(data, status, headers, config)
       )
-])
+)

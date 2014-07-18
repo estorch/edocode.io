@@ -1,10 +1,10 @@
-confirmClearModalController = ($scope, $modalInstance) ->
+clearModalController = ($scope, $modalInstance) ->
   $scope.title = 'Confirm Message Clear'
 
   # Confirm modal
   $scope.confirm = () ->
-    $modalInstance.close();
+    $modalInstance.close()
 
   # Cancel modal
   $scope.dismiss = () ->
-    $modalInstance.dismiss();
+    $modalInstance.dismiss()

@@ -1,7 +1,8 @@
 about = angular.module("about", [ ])
 
 about.controller("aboutController", ($scope) ->
-  $scope.title = "About Page"
+  $scope.pageTitle = "Eric R. Storch"
+  $scope.pageSubtitle = "Software Developer"
 
-  # A lot of exciting stuff happening on this static page!
+  # As you can see, a lot of exciting stuff happens here.
 ) 

@@ -1,8 +1,8 @@
-helloWorldModalController = ($scope, $modalInstance, helloWorldService) ->
-  # HelloWorld service accessor object with success/failure callbacks
-  helloWorld =
+sortModalController = ($scope, $modalInstance, sortService) ->
+  # Sort service accessor object with success/failure callbacks
+  sort =
     get: () ->
-      helloWorldService.get($scope.request, this.success, this.error)
+      sortService.get($scope.request, this.success, this.error)
     success: (data, status, headers, config) ->
       $scope.response = data
       $scope.responseString = JSON.stringify(data)
@@ -13,7 +13,8 @@ helloWorldModalController = ($scope, $modalInstance, helloWorldService) ->
   # Clear the request object
   clearRequest = () ->
     $scope.request =
-      name: ""
+      nums: "7,4,2,3,9,10,5,8,6,1"
+      sort: "bubble"
 
   # Clear the response object
   clearResponse = () ->
@@ -21,21 +22,20 @@ helloWorldModalController = ($scope, $modalInstance, helloWorldService) ->
     $scope.responseString = ""
 
   # Self-explanitory scope variables
-  $scope.pageTitle = "Hello World"
+  $scope.pageTitle = "Sort"
   $scope.request =
-    name: ""
-  $scope.response = null
-  $scope.responseString = ""
+    nums: "7,4,2,3,9,10,5,8,6,1"
+    sort: "bubble"
 
   # Method to start the web-service GET process
   $scope.submit = () ->
-    helloWorld.get()
+    sort.get()
+
+  # Cancels the modal
+  $scope.dismiss = () ->
+    $modalInstance.dismiss()
 
   # Clears entered data in the modal
   $scope.clear = () ->
     clearRequest()
     clearResponse()
-
-  # Cancels the modal
-  $scope.dismiss = () ->
-    $modalInstance.dismiss()

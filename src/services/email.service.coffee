@@ -1,30 +1,12 @@
-email = angular.module("emailService", [ ])
+email = angular.module("email", [ ])
 
-email.service("emailService", ["$http", ($http) ->
+email.service("emailService", ($http, apiPrefix) ->
   # Service accessor object: bulds HTTP object and calls $http with it and the passed callbacks
-  post: (data, success, error) ->
-    request =
-      From : "eric@edocode.io"
-      To : "eric@edocode.io"
-      Cc : ""
-      Bcc: ""
-      Subject : "Edocode.io Contact Form Submission from " + data.name
-      Tag : "Contact"
-      HtmlBody : "<b>Hello</b>"
-      TextBody : data.message
-      ReplyTo : data.email
-      Headers : []
-      TrackOpens : true
-
+  post: (request, success, error) ->
     http =
       method: "POST"
-      url: "http://api.postmarkapp.com/email"
+      url: apiPrefix + "/email"
       data: request
-      headers:
-        "Accept": "application/json"
-        "Content-Type": "application/json"
-        "X-Postmark-Server-Token": "POSTMARK_API_TEST"
-#        "X-Postmark-Server-Token": "d443dd6f-31f1-41ce-97d0-fd6a113db1ad"
 
     $http(http)
       .success(
@@ -34,4 +16,4 @@ email.service("emailService", ["$http", ($http) ->
         (data, status, headers, config) ->
           error(data, status, headers, config)
       )
-])
+)
