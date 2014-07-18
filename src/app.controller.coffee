@@ -38,6 +38,8 @@ app.config(["$httpProvider", ($httpProvider) ->
   # Nothing right now
 ])
 
+app.constant('apiPrefix', 'http://50.132.25.179:8080')
+
 app.controller("appController", ["$scope", ($scope) ->
   # Shout-out to my fiance
   $scope.pageTitle = "Hi Katie!"

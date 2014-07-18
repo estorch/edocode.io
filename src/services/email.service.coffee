@@ -1,12 +1,12 @@
 email = angular.module("email", [ ])
 
-email.service("emailService", ["$http", ($http) ->
+email.service("emailService", ($http, apiPrefix) ->
   # Service accessor object: bulds HTTP object and calls $http with it and the passed callbacks
-  post: (data, success, error) ->
+  post: (request, success, error) ->
     http =
       method: "POST"
-      url: "http://50.132.25.179:8080/email"
-      data: data
+      url: apiPrefix + "/email"
+      data: request
 
     $http(http)
       .success(
@@ -16,4 +16,4 @@ email.service("emailService", ["$http", ($http) ->
         (data, status, headers, config) ->
           error(data, status, headers, config)
       )
-])
+)
