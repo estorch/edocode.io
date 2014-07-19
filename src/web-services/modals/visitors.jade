@@ -16,7 +16,7 @@ div
                   span.required(ng-show="visitorPostForm.name.$valid || visitorPostForm.name.$pristine") &nbsp;
                   span.required(ng-show="visitorPostForm.name.$error.required && visitorPostForm.name.$dirty") Name required
                 div.col-xs-4
-                  button.btn.btn-primary.btn-sm(ng-click="submitPost()", ng-disabled="visitorForm.$invalid")
+                  button.btn.btn-primary.btn-sm(ng-click="submitPost()", ng-disabled="visitorPostForm.$invalid")
                     | Submit
                     br
                     | (POST)
