@@ -2,7 +2,7 @@ check = angular.module("visitors", [ ])
 
 check.service("visitorsService", ($http, apiPrefix) ->
   # Service accessor object: bulds HTTP object and calls $http with it and the passed callbacks
-  getId: (request, success, error) ->
+  get: (request, success, error) ->
     http =
       method: "GET"
       url: apiPrefix + "/visitors/" + request.id
@@ -13,22 +13,6 @@ check.service("visitorsService", ($http, apiPrefix) ->
           success(data, status, headers, config)
       )
     .error(
-        (data, status, headers, config) ->
-          error(data, status, headers, config)
-      )
-
-  # Service accessor object: bulds HTTP object and calls $http with it and the passed callbacks
-  get: (request, success, error) ->
-    http =
-      method: "GET"
-      url: "http://50.132.25.179:8080/visitors"
-
-    $http(http)
-      .success(
-        (data, status, headers, config) ->
-          success(data, status, headers, config)
-      )
-      .error(
         (data, status, headers, config) ->
           error(data, status, headers, config)
       )

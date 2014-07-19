@@ -13,7 +13,7 @@ div
             span.required(ng-show="sortForm.values.$valid || sortForm.values.$pristine") &nbsp;
             span.required(ng-show="sortForm.values.$invalid && sortForm.values.$dirty") Values required
           div.col-xs-4
-            button.btn.btn-primary.btn-sm(ng-click="submit()", , ng-disabled="sortForm.$invalid") Submit (GET)
+            button.btn.btn-primary.btn-sm(ng-click="submit()", ng-disabled="sortForm.$invalid") Submit (GET)
             button.btn.btn-warning.btn-sm(ng-click="clear()") Clear
       div.row
         label.col-xs-2.email(for="name")

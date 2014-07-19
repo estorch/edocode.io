@@ -1,10 +1,8 @@
 visitorsModalController = ($scope, $modalInstance, visitorsService) ->
   # Visitors service accessor object with success/failure callbacks
   visitors =
-    getId: () ->
-      visitorsService.getId($scope.getRequest, this.success, this.error)
     get: () ->
-      visitorsService.get(this.success, this.error)
+      visitorsService.get($scope.getRequest, this.success, this.error)
     post: () ->
       visitorsService.post($scope.postRequest, this.success, this.error)
     success: (data, status, headers, config) ->
@@ -37,10 +35,6 @@ visitorsModalController = ($scope, $modalInstance, visitorsService) ->
   $scope.submitGet = () ->
     visitors.get()
 
-  # Method to start the web-service GET process
-  $scope.submitGetId = () ->
-    visitors.getId()
-
   # Method to start the web-service POST process
   $scope.submitPost = () ->
     visitors.post()
@@ -51,7 +45,8 @@ visitorsModalController = ($scope, $modalInstance, visitorsService) ->
 
   # Clears entered data in the modal
   $scope.clear = () ->
-    this.visitorForm.$setPristine()
+    this.visitorPostForm.$setPristine()
+    this.visitorGetForm.$setPristine()
     clearRequest()
     clearResponse()
 
