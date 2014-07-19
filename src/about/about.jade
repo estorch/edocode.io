@@ -16,7 +16,9 @@ div.edo-content
       h1.page-subheader
         | About Me
       p.page-content
-        | My fiancé and I are new Seattle area residents. As such, I am actively seeking new employment as a back-end developer specializing in Java web-services and releated technologies. Along the way I'd also aim to establish new connections with the local development community.
+        | My&nbsp;
+        span(ng-click="changeImg()") fiancé&nbsp;
+        | and I are new Seattle area residents. As such, I am actively seeking new employment as a back-end developer specializing in Java web-services and releated technologies. Along the way I'd also aim to establish new connections with the local development community.
       h1.page-subheader
         | About The Site
       p.page-content
@@ -33,4 +35,4 @@ div.edo-content
         |     · Continue to expland the web-services selection on this website<br>
         |     · Enjoy the culture and activities the Seattle area has to offer<br>
     div.col-xs-4.center
-      img.photo.outline(src="assets/images/me.jpg")
+      img.photo.outline(src="assets/images/{{photo}}")
