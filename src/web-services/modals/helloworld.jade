@@ -4,11 +4,11 @@ div
   div.modal-body
     div.form-group
       div.row
-        label.col-xs-2.email(for="name") Name: (optional)
+        label.col-xs-2.email(for="name") Name:
         div.col-xs-6
           input.form-control.email-input(type="text", placeholder="Name", name="name", id="name", ng-model="request.name")
         div.col-xs-4
-          button.btn.btn-success.btn-sm(ng-click="submit()") Submit (GET)
+          button.btn.btn-primary.btn-sm(ng-click="submit()") Submit (GET)
           button.btn.btn-warning.btn-sm(ng-click="clear()") Clear
     hr
     div.row

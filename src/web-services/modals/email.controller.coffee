@@ -7,7 +7,7 @@ emailModalController = ($scope, $modalInstance, emailService) ->
     subject: ""
     message: "This is a test message."
 
-  $scope.sendButtonText = "Send"
+  $scope.sendButtonText = "Send (POST)"
   $scope.sendButtonLock = false
 
   # Sort service accessor object with success/failure callbacks
@@ -49,7 +49,7 @@ emailModalController = ($scope, $modalInstance, emailService) ->
     clearRequest()
     clearResponse()
     this.emailForm.$setPristine()
-    $scope.sendButtonText = "Send"
+    $scope.sendButtonText = "Send (POST)"
     $scope.sendButtonLock = false
     $scope.status = ""
 

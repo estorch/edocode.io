@@ -17,7 +17,7 @@ visitorsModalController = ($scope, $modalInstance, visitorsService) ->
   # Clear the request object
   clearRequest = () ->
     $scope.getRequest =
-      id: 0
+      id: ""
     $scope.postRequest =
       name: ""
 
@@ -29,7 +29,7 @@ visitorsModalController = ($scope, $modalInstance, visitorsService) ->
   # Self-explanitory scope variables
   $scope.pageTitle = "Visitors"
   $scope.getRequest =
-    id: 0
+    id: ""
   $scope.postRequest =
     name: ""
 
@@ -51,6 +51,7 @@ visitorsModalController = ($scope, $modalInstance, visitorsService) ->
 
   # Clears entered data in the modal
   $scope.clear = () ->
+    this.visitorForm.$setPristine()
     clearRequest()
     clearResponse()
 

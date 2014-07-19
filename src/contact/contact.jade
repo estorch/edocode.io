@@ -26,7 +26,9 @@ div.edo-content
       form.css-form(name="contactForm", id="contactForm", novalidate)
         div.form-group
           div.row
-            label.col-xs-2.email(for="name") Name:
+            label.col-xs-2.email(for="name")
+              span.required *&nbsp;
+              | Name:
             div.col-xs-6
               input.form-control(type="text", placeholder="Name", name="name", id="name", ng-model="email.name", ng-maxlength="30", required)
               span.required(ng-show="contactForm.name.$valid || contactForm.name.$pristine") &nbsp;
@@ -35,7 +37,9 @@ div.edo-content
             div.col-xs-4
         div.form-group
           div.row
-            label.col-xs-2.email(for="email") E-mail:
+            label.col-xs-2.email(for="email")
+              span.required *&nbsp;
+              | E-mail:
             div.col-xs-6
               input.form-control(type="email", placeholder="Email", name="email", id="email", ng-model="email.email", ng-maxlength="254", required)
               span.required(ng-show="contactForm.email.$valid || contactForm.email.$pristine") &nbsp;
@@ -43,7 +47,9 @@ div.edo-content
             div.col-xs-4
         div.form-group
           div.row
-            label.col-xs-2.email(for="message") Message:
+            label.col-xs-2.email(for="message")
+              span.required *&nbsp;
+              | Message:
             div.col-xs-9
               textarea.form-control(rows="8", placeholder="Your Message", name="message", id="message", ng-model="email.message", ng-minlength="1", required)
               span.required(ng-show="contactForm.message.$valid || contactForm.message.$pristine") &nbsp;

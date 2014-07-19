@@ -2,58 +2,65 @@ div
   div.modal-header.edo-modal-header
     h3.modal-title.edo-modal-title {{ pageTitle }}
   div.modal-body
-    div.form-group
+    form.css-form(name="sortForm", id="contactForm", novalidate)
+      div.form-group
+        div.row
+          label.col-xs-2.email(for="name")
+            span.required *&nbsp;
+            | Values:
+          div.col-xs-6
+            input.form-control.email-input(type="text", placeholder="Values", name="values", id="values", ng-model="request.nums", required)
+            span.required(ng-show="sortForm.values.$valid || sortForm.values.$pristine") &nbsp;
+            span.required(ng-show="sortForm.values.$invalid && sortForm.values.$dirty") Values required
+          div.col-xs-4
+            button.btn.btn-primary.btn-sm(ng-click="submit()", , ng-disabled="sortForm.$invalid") Submit (GET)
+            button.btn.btn-warning.btn-sm(ng-click="clear()") Clear
       div.row
-        label.col-xs-2.email(for="name") Values:
-        div.col-xs-6
-          input.form-control.email-input(type="text", placeholder="Values", name="values", id="values", ng-model="request.nums")
+        label.col-xs-2.email(for="name")
+          span.required *&nbsp;
+          | Algorithm:
+        div.col-xs-2
+          div.radio
+            label
+              input(type="radio", name="sortRadio", id="bubbleSort", value="bubble", ng-model="request.sort", checked)
+              p Bubble
+          div.radio
+            label
+              input(type="radio", name="sortRadio", id="selectionSort", value="selection", ng-model="request.sort")
+              p Selection
+        div.col-xs-2
+          div.radio
+            label
+              input(type="radio", name="sortRadio", id="quickSort", value="quick", ng-model="request.sort")
+              p
+                s Quick
+          div.radio
+            label
+              input(type="radio", name="sortRadio", id="mergeSort", value="merge", ng-model="request.sort")
+              input(type="radio", name="sortRadio", id="mergeSort", value="merge", ng-model="request.sort")
+              p
+                s Merge
+        div.col-xs-2
+          div.radio
+            label
+              input(type="radio", name="sortRadio", id="RadixSort", value="radix", ng-model="request.sort")
+              p
+                s Radix
+          div.radio
+            label
+              input(type="radio", name="sortRadio", id="bogoSort", value="bogo", ng-model="request.sort")
+              p Bogo
         div.col-xs-4
-          button.btn.btn-success.btn-sm(ng-click="submit()") Submit (GET)
-          button.btn.btn-warning.btn-sm(ng-click="clear()") Clear
-    div.row
-      label.col-xs-2.email(for="name") Algorithm:
-      div.col-xs-2
-        div.radio
-          label
-            input(type="radio", name="sortRadio", id="bubbleSort", value="bubble", ng-model="request.sort", checked)
-            p Bubble
-        div.radio
-          label
-            input(type="radio", name="sortRadio", id="selectionSort", value="selection", ng-model="request.sort")
-            p Selection
-      div.col-xs-2
-        div.radio
-          label
-            input(type="radio", name="sortRadio", id="quickSort", value="quick", ng-model="request.sort")
-            p
-              s Quick
-        div.radio
-          label
-            input(type="radio", name="sortRadio", id="mergeSort", value="merge", ng-model="request.sort")
-            input(type="radio", name="sortRadio", id="mergeSort", value="merge", ng-model="request.sort")
-            p
-              s Merge
-      div.col-xs-2
-        div.radio
-          label
-            input(type="radio", name="sortRadio", id="RadixSort", value="radix", ng-model="request.sort")
-            p
-              s Radix
-        div.radio
-          label
-            input(type="radio", name="sortRadio", id="bogoSort", value="bogo", ng-model="request.sort")
-            p Bogo
-      div.col-xs-4
-        p.sort-caveat(ng-show="request.sort != 'bogo'") Striked selections are not yet developed. Bubble will be used in their place.
-        p.sort-caveat(ng-show="request.sort == 'bogo'") Feelin' lucky, eh? Your sort list will be limited to the first 10 values for Bogo or else it'd hose the server. Have fun!
-    hr
-    div.row
-      div.col-xs-12
-        p.edo-modal-subtitle.cetner Response JSON
-        div.form-group
-          div.row
-            div.col-xs-12
-              textarea.form-control(rows="4", placeholder="Raw JSON", name="response", id="response", ng-model="responseString")
+          p.sort-caveat(ng-show="request.sort != 'bogo'") Striked selections are not yet developed. Bubble will be used in their place.
+          p.sort-caveat(ng-show="request.sort == 'bogo'") Feelin' lucky, eh? Your sort list will be limited to the first 10 values for Bogo or else it'd hose the server. Have fun!
+      hr
+      div.row
+        div.col-xs-12
+          p.edo-modal-subtitle.cetner Response JSON
+          div.form-group
+            div.row
+              div.col-xs-12
+                textarea.form-control(rows="4", placeholder="Raw JSON", name="response", id="response", ng-model="responseString")
 
   div.modal-footer.edo-modal-footer
     button.btn.btn-danger.btn-sm(ng-click="dismiss()") Close

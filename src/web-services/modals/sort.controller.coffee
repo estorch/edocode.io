@@ -37,5 +37,6 @@ sortModalController = ($scope, $modalInstance, sortService) ->
 
   # Clears entered data in the modal
   $scope.clear = () ->
+    this.sortForm.$setPristine()
     clearRequest()
     clearResponse()
