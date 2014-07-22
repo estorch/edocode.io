@@ -1,5 +1,23 @@
 extends ../page_template.jade
 
+block header
+  div.row
+    div.col-xs-12
+      div.edo-content-header
+        div.edo-content-header-section
+          h3.page-title &lsaquo;
+        div.edo-content-header-section
+          h3.page-title.center {{ pageTitle }}
+          block subheader
+            h3.page-title.page-title-sub.center {{ pageSubtitle }}
+        div.edo-content-header-section
+          h3.page-title &rsaquo;
+      h3.page-title.page-title-sub.center Download:
+        button.btn.btn-sm.btn-link
+          img(src="assets/images/pdf.jpg")
+        button.btn.btn-sm.btn-link
+          img(src="assets/images/doc.jpg")
+
 block content
   div.edo-content
     div.row

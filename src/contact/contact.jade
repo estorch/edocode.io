@@ -38,13 +38,9 @@ block content
               div.col-xs-4
           div.form-group
             div.row
-              label.col-xs-2.email(for="message")
-                span.required *&nbsp;
-                | Message:
+              label.col-xs-2.email(for="message") Message:
               div.col-xs-9
-                textarea.form-control(rows="8", placeholder="Your Message", name="message", id="message", ng-model="email.message", ng-minlength="1", required)
-                span.required(ng-show="contactForm.message.$valid || contactForm.message.$pristine") &nbsp;
-                span.required(ng-show="contactForm.message.$error.required && contactForm.message.$dirty") Message required
+                textarea.form-control(rows="8", placeholder="Your Message", name="message", id="message", ng-model="email.message")
               div.col-xs-1
           div.form-group
             div.row
