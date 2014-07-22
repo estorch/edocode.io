@@ -1,38 +1,29 @@
-div.row
-  div.col-xs-12
-    div.edo-content-header
-      div.edo-content-header-section
-        h3.page-title &lsaquo;
-      div.edo-content-header-section
-        h3.page-title.center
-          | {{ pageTitle }}
-        h3.page-title.page-title-sub.center
-          | {{ pageSubtitle }}
-      div.edo-content-header-section
-        h3.page-title &rsaquo;
-div.edo-content
-  div.row
-    div.col-xs-8
-      h1.page-subheader
-        | About Me
-      p.page-content
-        | My&nbsp;
-        span(ng-click="changeImg()") fiancé&nbsp;
-        | and I are new Seattle area residents. As such, I am actively seeking new employment as a back-end developer specializing in Java web-services and releated technologies. Along the way I'd also aim to establish new connections with the local development community.
-      h1.page-subheader
-        | About The Site
-      p.page-content
-        | This website serves as a demonstration platform for custom-made web-services using multiple frameworks and design styles.
-      h1.page-subheader
-        | Experience
-      p.page-content
-        | I am a graudate of the University of Nevada, Las Vegas with a bachelor’s degree in Computer Science. I have spent the last year working on internal enterprise-level web applications with the excellent developers at Allegiant Travel Company in Las Vegas. Prior to this, I have been designing and developing websites on and off for the past twelve years.
-      h1.page-subheader
-        |   Current Goals
-      p.page-content
-        |     · Aquire a new job in the Seattle area as a back-end developer<br>
-        |     · Further increasing my knowledge and abilities in back-end web technolgies<br>
-        |     · Continue to expland the web-services selection on this website<br>
-        |     · Enjoy the culture and activities the Seattle area has to offer<br>
-    div.col-xs-4.center
-      img.photo.outline(src="assets/images/{{photo}}")
+extends ../page_template.jade
+
+block content
+  div.edo-content
+    div.row
+      div.col-xs-8
+        h1.page-subheader
+          | About Me
+        p.page-content
+          | My&nbsp;
+          span(ng-click="changeImg()") fiancé&nbsp;
+          | and I are new Seattle area residents. As such, I am actively seeking new employment as a back-end developer specializing in Java web-services and releated technologies. Along the way I'd also aim to establish new connections with the local development community.
+        h1.page-subheader
+          | About The Site
+        p.page-content
+          | This website serves as a demonstration platform for custom-made web-services using multiple frameworks and design styles.
+        h1.page-subheader
+          | Experience
+        p.page-content
+          | I am a graudate of the University of Nevada, Las Vegas with a bachelor’s degree in Computer Science. I have spent the last year working on internal enterprise-level web applications with the excellent developers at Allegiant Travel Company in Las Vegas. Prior to this, I have been designing and developing websites on and off for the past twelve years.
+        h1.page-subheader
+          |   Current Goals
+        p.page-content
+          |     · Aquire a new job in the Seattle area as a back-end developer<br>
+          |     · Further increasing my knowledge and abilities in back-end web technolgies<br>
+          |     · Continue to expland the web-services selection on this website<br>
+          |     · Enjoy the culture and activities the Seattle area has to offer<br>
+      div.col-xs-4.center
+        img.photo.outline(ng-src="assets/images/{{ photo }}")

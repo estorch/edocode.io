@@ -1,16 +1,32 @@
-div.row
-  div.col-xs-12
-    div.edo-content-header
-      div.edo-content-header-section
-        h3.page-title &lsaquo;
-      div.edo-content-header-section
-        h3.page-title.center
-          | {{ pageTitle }}
-        h3.page-title.page-title-sub.center
-          | {{ pageSubtitle }}
-      div.edo-content-header-section
-        h3.page-title &rsaquo;
-div.edo-content
+extends ../page_template.jade
+
+block header
+  div.row
+    div.col-xs-12
+      div.edo-content-header
+        span.edo-content-header-section-left
+          h3.page-title &lsaquo;
+        span.edo-content-header-section-center
+          h3.page-title.center {{ pageTitle }}
+          block subheader
+            h3.page-title.page-title-sub.center {{ pageSubtitle }}
+        span.edo-content-header-section-right
+          h3.page-title &rsaquo;
   div.row
     div.col-xs-12.center
-      object.resume(data="assets/pdfs/eric_storch_resume.pdf", type="application/pdf")
+      a.btn.btn-sm.btn-link(ng-href="assets/pdfs/eric_storch_resume.pdf")
+        img(src="assets/images/pdf.jpg")
+      a.btn.btn-sm.btn-link(ng-href="assets/pdfs/eric_storch_resume.doc")
+        img(src="assets/images/doc.jpg")
+  div.row
+    div.col-xs-12.center
+      h3.page-title.page-title-sub
+      | Right Click -> Save Link As...
+      br
+      | To Download
+
+block content
+  div.edo-content
+    div.row
+      div.col-xs-12.center
+        object.resume(data="assets/pdfs/eric_storch_resume.pdf", type="application/pdf")

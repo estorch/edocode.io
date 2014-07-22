@@ -5,7 +5,9 @@ div
     form.css-form(name="emailForm", id="emailForm", novalidate)
       div.form-group
         div.row
-          label.col-xs-2.email(for="email") Email:
+          label.col-xs-2.email(for="email")
+            span.required *&nbsp;
+            | Email:
           div.col-xs-6
             input.form-control(type="email", placeholder="Email", name="email", id="email", ng-model="request.email", required)
             span.required(ng-show="emailForm.email.$valid || emailForm.email.$pristine") &nbsp;
@@ -13,10 +15,13 @@ div
           div.col-xs-4
       div.form-group
         div.row
-          label.col-xs-2.email(for="subject") Subject:
+          label.col-xs-2.email(for="subject")
+            span.required *&nbsp;
+            | Subject:
           div.col-xs-6
-            input.form-control(type="text", placeholder="Subject", name="subject", id="subject", ng-model="request.subject", ng-maxlength="78")
+            input.form-control(type="text", placeholder="Subject", name="subject", id="subject", ng-model="request.subject", ng-maxlength="78", required)
             span.required(ng-show="emailForm.subject.$valid || emailForm.subject.$pristine") &nbsp;
+            span.required(ng-show="emailForm.subject.$invalid && emailForm.subject.$dirty") Subject required
             span.required(ng-show="emailForm.subject.$error.maxlength") Subject too long
           div.col-xs-4
       div.form-group
