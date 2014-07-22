@@ -1,61 +1,58 @@
-div.row
-  div.col-xs-12
-    div.edo-content-header
-      div.edo-content-header-section
-        h3.page-title &lsaquo;
-      div.edo-content-header-section
-        h3.page-title.center
-          | {{ pageTitle }}
-        h3.page-title.page-title-sub.center
-          | {{ pageSubtitle }}
-      div.edo-content-header-section
-        h3.page-title &rsaquo;
-div.edo-content
-  div.row
-    div.col-xs-4
-      p.contact-name
-        | Eric Storch<br>
-      p.contact-info
-        | 4580 Klahanie Dr SE<br>
-        | PMB 465<br>
-        | Issaquah, WA 98029<br>
-        | (702) 875-3312<br>
-        a.foobar(href="{{ foo() }}", target="_top")
-          | {{ bar() }}
-    div.col-xs-8
-      form.css-form(name="contactForm", id="contactForm", novalidate)
-        div.form-group
-          div.row
-            label.col-xs-2.email(for="name") Name:
-            div.col-xs-6
-              input.form-control(type="text", placeholder="Name", name="name", id="name", ng-model="email.name", ng-maxlength="30", required)
-              span.required(ng-show="contactForm.name.$valid || contactForm.name.$pristine") &nbsp;
-              span.required(ng-show="contactForm.name.$error.required && contactForm.name.$dirty") Name required
-              span.required(ng-show="contactForm.name.$error.maxlength") Name too long
-            div.col-xs-4
-        div.form-group
-          div.row
-            label.col-xs-2.email(for="email") E-mail:
-            div.col-xs-6
-              input.form-control(type="email", placeholder="Email", name="email", id="email", ng-model="email.email", ng-maxlength="254", required)
-              span.required(ng-show="contactForm.email.$valid || contactForm.email.$pristine") &nbsp;
-              span.required(ng-show="contactForm.email.$invalid && contactForm.email.$dirty") Valid email required
-            div.col-xs-4
-        div.form-group
-          div.row
-            label.col-xs-2.email(for="message") Message:
-            div.col-xs-9
-              textarea.form-control(rows="8", placeholder="Your Message", name="message", id="message", ng-model="email.message", ng-minlength="1", required)
-              span.required(ng-show="contactForm.message.$valid || contactForm.message.$pristine") &nbsp;
-              span.required(ng-show="contactForm.message.$error.required && contactForm.message.$dirty") Message required
-            div.col-xs-1
-        div.form-group
-          div.row
-            div.col-xs-3
-            div.col-xs-4
-              span.pull-right {{ status }}
-            div.col-xs-2
-              button.btn.btn-primary.btn-block.btn-default.pull-right(ng-click="submit()", ng-disabled="contactForm.$invalid || sendButtonLock") {{ sendButtonText }}
-            div.col-xs-2
-              button.btn.btn-warning.btn-block.pull-right(ng-click="clearMessage()") Clear
-            div.col-xs-1
+extends ../page_template.jade
+
+block content
+  div.edo-content
+    div.row
+      div.col-xs-4
+        p.contact-name
+          | Eric Storch<br>
+        p.contact-info
+          | 4580 Klahanie Dr SE<br>
+          | PMB 465<br>
+          | Issaquah, WA 98029<br>
+          | (702) 875-3312<br>
+          a.foobar(href="{{ foo() }}", target="_top")
+            | {{ bar() }}
+      div.col-xs-8
+        form.css-form(name="contactForm", id="contactForm", novalidate)
+          div.form-group
+            div.row
+              label.col-xs-2.email(for="name")
+                span.required *&nbsp;
+                | Name:
+              div.col-xs-6
+                input.form-control(type="text", placeholder="Name", name="name", id="name", ng-model="email.name", ng-maxlength="30", required)
+                span.required(ng-show="contactForm.name.$valid || contactForm.name.$pristine") &nbsp;
+                span.required(ng-show="contactForm.name.$error.required && contactForm.name.$dirty") Name required
+                span.required(ng-show="contactForm.name.$error.maxlength") Name too long
+              div.col-xs-4
+          div.form-group
+            div.row
+              label.col-xs-2.email(for="email")
+                span.required *&nbsp;
+                | E-mail:
+              div.col-xs-6
+                input.form-control(type="email", placeholder="Email", name="email", id="email", ng-model="email.email", ng-maxlength="254", required)
+                span.required(ng-show="contactForm.email.$valid || contactForm.email.$pristine") &nbsp;
+                span.required(ng-show="contactForm.email.$invalid && contactForm.email.$dirty") Valid email required
+              div.col-xs-4
+          div.form-group
+            div.row
+              label.col-xs-2.email(for="message")
+                span.required *&nbsp;
+                | Message:
+              div.col-xs-9
+                textarea.form-control(rows="8", placeholder="Your Message", name="message", id="message", ng-model="email.message", ng-minlength="1", required)
+                span.required(ng-show="contactForm.message.$valid || contactForm.message.$pristine") &nbsp;
+                span.required(ng-show="contactForm.message.$error.required && contactForm.message.$dirty") Message required
+              div.col-xs-1
+          div.form-group
+            div.row
+              div.col-xs-3
+              div.col-xs-4
+                span.pull-right {{ status }}
+              div.col-xs-2
+                button.btn.btn-primary.btn-block.btn-default.pull-right(ng-click="submit()", ng-disabled="contactForm.$invalid || sendButtonLock") {{ sendButtonText }}
+              div.col-xs-2
+                button.btn.btn-warning.btn-block.pull-right(ng-click="clearMessage()") Clear
+              div.col-xs-1

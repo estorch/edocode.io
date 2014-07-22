@@ -1,0 +1,18 @@
+block header
+  div.row
+    div.col-xs-12
+      div.edo-content-header
+        div.edo-content-header-section
+          h3.page-title &lsaquo;
+        div.edo-content-header-section
+          h3.page-title.center
+            | {{ pageTitle }}
+          block subheader
+            h3.page-title.page-title-sub.center
+              | {{ pageSubtitle }}
+        div.edo-content-header-section
+          h3.page-title &rsaquo;
+
+block content
+  h1 Empty content!
+  p Seriously, you shouldn't be seeing this...
