@@ -19,7 +19,7 @@ html(lang="en")
         div#edo-navbar
           div#edo-navbar-logo
             a(ng-href="#/about", alt="edocode.io - where turtles fly")
-              img(src="assets/images/logo.jpg")
+              img(ng-src="assets/images/logo.jpg")
           div.edo-navbar-item#about
             a(ng-href="#/about")
               div.edo-navbar-overbar#about-overbar
@@ -42,9 +42,9 @@ html(lang="en")
                 p Contact
           div#edo-navbar-tail
             a(href="http://www.linkedin.com/pub/eric-storch/5a/5ba/654/", target="_blank")
-              img.tail-img#linkedin(src='assets/images/linkedin.jpg')
+              img.tail-img#linkedin(ng-src='assets/images/linkedin.jpg')
             a(href="https://github.com/himalstorch/edocode.io", target="_blank")
-              img.tail-img#github(src='assets/images/github.jpg')
+              img.tail-img#github(ng-src='assets/images/github.jpg')
       div#edo-content-wrapper
         div(ng-view)
 
